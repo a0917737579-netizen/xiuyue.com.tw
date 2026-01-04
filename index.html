@@ -443,24 +443,61 @@
 
     <span id="works" class="anchor"></span>
     <section class="section">
-      <h2>案例展示（模板）</h2>
-      <p class="muted" style="margin:0 0 14px;">
-        你之後只要把照片與文字補上，這裡就會變成正式案例區（住宅較多，亦有商空）。
-      </p>
-
-      <div class="grid2">
-        <div class="card">
-          <h3>住宅案例｜（可填：板橋 / 新莊 / 中和…）</h3>
-          <p>坪數／格局／風格／重點工項：例如「收納整合、燈光層次、耐用材質」。</p>
-          <p class="mini">照片建議：3～8 張（客廳、廚房、主臥、收納細節）。</p>
-        </div>
-        <div class="card">
-          <h3>商業空間｜（可填：店面 / 辦公室）</h3>
-          <p>工期／材質／動線：例如「耐磨地坪、招牌視覺、動線與燈光」。</p>
-          <p class="mini">照片建議：3～6 張（門面、主視覺、工作區、細節）。</p>
-        </div>
-      </div>
-    </section>
+      /* Works / Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+.work{
+  border:1px solid var(--line);
+  border-radius: 16px;
+  overflow:hidden;
+  background: rgba(15,22,35,.42);
+}
+.work .img{
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  border-bottom:1px solid var(--line);
+}
+.work .body{
+  padding:14px;
+}
+.work .tags{
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin:0 0 10px;
+}
+.tag{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(11,15,20,.25);
+  color: var(--muted);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.2px;
+}
+.work h3{margin:0 0 6px; font-size:15px}
+.work p{margin:0; color:var(--muted); font-size:14px}
+.work .meta{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:8px;
+  color: rgba(233,240,247,.70);
+  font-size:12px;
+}
+.meta div{
+  border:1px solid var(--line);
+  border-radius: 12px;
+  padding:8px 10px;
+  background: rgba(16,24,38,.35);
+}
+@media (max-width: 920px){
+  .gallery{grid-template-columns: 1fr;}
+}
 
     <span id="contact" class="anchor"></span>
     <section class="section">
