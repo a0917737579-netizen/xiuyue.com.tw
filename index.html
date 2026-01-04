@@ -1,46 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>秀岳設計室內裝修有限公司｜把設計落地，讓裝修更安心</title>
-  <meta name="description" content="秀岳設計室內裝修有限公司，位於新北市板橋，提供住宅與商業空間室內裝修工程。重視規劃、施工與完成度，讓裝修更安心。">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="秀岳設計室內裝修有限公司（新北板橋）。住宅裝修與商業空間工程，重視規劃、施工安全、品質與責任，讓裝修更安心。" />
+  <meta name="format-detection" content="telephone=yes" />
+
+  <!-- Open Graph (分享用) -->
+  <meta property="og:title" content="秀岳設計室內裝修有限公司｜把設計落地，讓裝修更安心" />
+  <meta property="og:description" content="住宅裝修與商業空間工程｜新北板橋｜電話 0917-737-579｜LINE 官方帳號可諮詢" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_TW" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#101826;
+      --card2:#0f1623;
+      --text:#eaf0f7;
+      --muted:#a9b6c6;
+      --line:rgba(255,255,255,.12);
+      --brand:#8ab4ff;
+      --brand2:#7ce3d1;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(138,180,255,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(124,227,209,.16), transparent 55%),
+        radial-gradient(900px 600px at 40% 90%, rgba(138,180,255,.10), transparent 60%),
+        var(--bg);
+      line-height:1.75;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 90px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(16,24,38,.55);
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 0;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(138,180,255,.95), rgba(124,227,209,.85));
+      box-shadow: 0 10px 30px rgba(138,180,255,.18);
+      flex:0 0 auto;
+    }
+    .brand h1{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.6px;
+      font-weight:700;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand small{display:block; color:var(--muted); font-weight:600; letter-spacing:.2px}
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      text-decoration:none;
+      border:1px solid var(--line);
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(15,22,35,.4);
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+    }
+    .pill:hover{border-color: rgba(138,180,255,.45)}
+    .pill.primary{
+      border-color: rgba(124,227,209,.55);
+      background: rgba(124,227,209,.12);
+    }
+
+    .hero{
+      margin-top:18px;
+      padding:26px 22px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(16,24,38,.78), rgba(16,24,38,.42));
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-40px -60px auto auto;
+      width:220px; height:220px;
+      background: radial-gradient(circle at 30% 30%, rgba(138,180,255,.35), transparent 55%);
+      filter: blur(4px);
+      transform: rotate(18deg);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(11,15,20,.35);
+      color:var(--muted);
+      font-weight:800;
+      letter-spacing:.4px;
+      font-size:12px;
+    }
+    .kicker b{color:var(--text)}
+    .headline{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 4.2vw, 44px);
+      line-height:1.2;
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 62ch;
+    }
+    .cta-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+      background: rgba(15,22,35,.45);
+    }
+    .btn:hover{border-color: rgba(138,180,255,.45)}
+    .btn.primary{
+      border-color: rgba(138,180,255,.65);
+      background: linear-gradient(135deg, rgba(138,180,255,.22), rgba(124,227,209,.14));
+    }
+    .btn .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(124,227,209,.85);
+      box-shadow: 0 0 0 5px rgba(124,227,209,.12);
+    }
+    .sidecard{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(15,22,35,.35);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height: 100%;
+    }
+    .sidecard h3{margin:0 0 10px; font-size:14px; color:var(--muted); letter-spacing:.4px}
+    .list{
+      margin:0; padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .list li{
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(16,24,38,.45);
+    }
+    .list b{display:block; font-size:14px}
+    .list span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    .section{
+      margin-top:18px;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(16,24,38,.35);
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:.4px;
+    }
+    .muted{color:var(--muted)}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .card{
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(15,22,35,.42);
+    }
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .badge{
+      display:inline-flex;
+      gap:8px; align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(11,15,20,.25);
+      color: var(--muted);
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.3px;
+    }
+    .badge i{
+      width:8px; height:8px; border-radius:999px;
+      background: rgba(138,180,255,.9);
+      box-shadow: 0 0 0 5px rgba(138,180,255,.12);
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .contact a{color:var(--text); text-decoration:none}
+    .contact .big{
+      font-size:22px; font-weight:1000; letter-spacing:.3px;
+    }
+    .contact .row{
+      display:flex; align-items:flex-start; gap:10px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(15,22,35,.42);
+    }
+    .ic{
+      width:36px; height:36px; border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(138,180,255,.16);
+      border:1px solid rgba(138,180,255,.25);
+      flex:0 0 auto;
+      font-weight:1000;
+    }
+    .mini{color:var(--muted); font-size:13px; margin-top:2px}
+    .footer{
+      margin-top:16px;
+      color: rgba(233,240,247,.62);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
+      padding: 6px 2px 0;
+    }
+
+    /* Mobile */
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      .nav{display:none;}
+    }
+
+    /* Floating contact (mobile-friendly) */
+    .floatbar{
+      position: fixed;
+      left: 0; right: 0; bottom: 14px;
+      display:flex;
+      justify-content:center;
+      pointer-events:none;
+      z-index: 50;
+    }
+    .floatbar .inner{
+      pointer-events:auto;
+      display:flex;
+      gap:10px;
+      padding:10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(16,24,38,.72);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+    .fbtn{
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      color:var(--text);
+      font-weight:950;
+      font-size:13px;
+      background: rgba(15,22,35,.35);
+    }
+    .fbtn.primary{
+      border-color: rgba(124,227,209,.55);
+      background: rgba(124,227,209,.12);
+    }
+    .fbtn .s{
+      width:8px; height:8px; border-radius:999px; background: rgba(124,227,209,.95);
+      box-shadow: 0 0 0 5px rgba(124,227,209,.12);
+    }
+
+    /* anchor spacing */
+    .anchor{position: relative; top: -12px;}
+  </style>
 </head>
 
-<body style="font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',sans-serif;line-height:1.8;margin:0;color:#111;">
-  <div style="max-width:900px;margin:0 auto;padding:40px 24px;">
+<body>
+  <div class="wrap">
+    <!-- Top -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>秀岳設計室內裝修有限公司</h1>
+          <small>新北板橋｜住宅裝修・商業空間</small>
+        </div>
+      </div>
+      <div class="nav" aria-label="頁面導覽">
+        <a class="pill" href="#services">服務</a>
+        <a class="pill" href="#process">流程</a>
+        <a class="pill" href="#works">案例</a>
+        <a class="pill primary" href="#contact">聯絡</a>
+      </div>
+    </div>
 
-    <h1>把設計落地，讓裝修更安心</h1>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">專注「做得出來」<b>的設計與工程</b></div>
+          <h2 class="headline">把設計落地，讓裝修更安心</h2>
+          <p class="sub">
+            裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
+            我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
+          </p>
 
-    <p>
-      <strong>秀岳設計室內裝修有限公司</strong><br>
-      以實際使用為出發點，<br>
-      無論是居住空間或工作空間，<br>
-      都以相同的標準看待規劃、施工與完成度。
-    </p>
+          <div class="cta-row">
+            <a class="btn primary" href="tel:0917737579"><span class="dot"></span>立即電話諮詢：0917-737-579</a>
+            <a class="btn" href="https://lin.ee/SENiV0F" target="_blank" rel="noopener">加 LINE 諮詢</a>
+            <a class="btn" href="#contact">查看聯絡方式</a>
+          </div>
 
-    <p>
-      透過清楚的流程與工程管理，<br>
-      讓每一個空間能夠被完整完成，<br>
-      並在完工後安心使用。
-    </p>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span class="badge"><i></i>工程管理與品質把關</span>
+            <span class="badge"><i></i>重視施工安全與責任</span>
+            <span class="badge"><i></i>北部住宅為主｜承作商空</span>
+          </div>
+        </div>
 
-    <hr>
+        <aside class="sidecard">
+          <div>
+            <h3>你最在意的，我們先講清楚</h3>
+            <ul class="list">
+              <li>
+                <b>預算透明</b>
+                <span>先把需求拆清楚，項目化估算，避免施工中反覆加價。</span>
+              </li>
+              <li>
+                <b>進度可掌握</b>
+                <span>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</span>
+              </li>
+              <li>
+                <b>交付有標準</b>
+                <span>完工收尾、清潔、驗收清單，讓成品能安心住、安心用。</span>
+              </li>
+            </ul>
+          </div>
+          <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:13px;">
+            想先快速評估？<br/>
+            直接用 LINE 傳「坪數 / 格局 / 預算 / 需求」，我們回覆更快。
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <h2>聯絡資訊</h2>
-    <p>
-      📞 電話：<a href="tel:0917737579">0917-737-579</a><br>
-      💬 LINE 官方帳號：<a href="https://lin.ee/SENiV0F" target="_blank">加 LINE 諮詢</a><br>
-      📍 地址：新北市板橋區四川路一段264號
-    </p>
+    <!-- Services -->
+    <span id="services" class="anchor"></span>
+    <section class="section">
+      <h2>服務項目</h2>
+      <p class="muted" style="margin:0 0 14px;">
+        以住宅裝修為核心，同步承作商業空間。依需求提供規劃、工程統整與施工管理。
+      </p>
 
-    <hr>
+      <div class="grid3">
+        <div class="card">
+          <h3>住宅裝修</h3>
+          <p>新成屋、老屋翻新、局部改造。動線收納、燈光、材料與施工細節完整落地。</p>
+        </div>
+        <div class="card">
+          <h3>商業空間</h3>
+          <p>店面、辦公室、工作室等。重視工期、動線與耐用性，兼顧營運需求。</p>
+        </div>
+        <div class="card">
+          <h3>工程整合與監工</h3>
+          <p>工種協調、工序安排、品質與安全管理。讓現場有節奏，成果有標準。</p>
+        </div>
+      </div>
+    </section>
 
-    <p style="font-size:14px;color:#666;">
-      © 2026 Xiuyue Interior Renovation Co., Ltd.<br>
-      秀岳設計室內裝修有限公司
-    </p>
+    <!-- Process -->
+    <span id="process" class="anchor"></span>
+    <section class="section">
+      <h2>合作流程</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>1）初步了解需求</h3>
+          <p>格局、坪數、預算與偏好。先把重點整理清楚，避免方向一直變。</p>
+        </div>
+        <div class="card">
+          <h3>2）現場丈量與規劃</h3>
+          <p>釐清限制、管線與施工條件，規劃動線、收納、材質與照明。</p>
+        </div>
+        <div class="card">
+          <h3>3）報價與工期確認</h3>
+          <p>項目化報價，清楚列出材料與工法。確認工期節點與驗收方式。</p>
+        </div>
+        <div class="card">
+          <h3>4）施工管理與驗收交付</h3>
+          <p>工序安排、品質把關、收尾清潔。完工後以驗收清單確認成品。</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Works -->
+    <span id="works" class="anchor"></span>
+    <section class="section">
+      <h2>案例展示（模板）</h2>
+      <p class="muted" style="margin:0 0 14px;">
+        你之後只要把照片與文字補上，這裡就會變成正式案例區（住宅較多，亦有商空）。
+      </p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>住宅案例｜（可填：板橋 / 新莊 / 中和…）</h3>
+          <p>坪數／格局／風格／重點工項：例如「收納整合、燈光層次、耐用材質」。</p>
+          <p class="mini">照片建議：3～8 張（客廳、廚房、主臥、收納細節）。</p>
+        </div>
+        <div class="card">
+          <h3>商業空間｜（可填：店面 / 辦公室）</h3>
+          <p>工期／材質／動線：例如「耐磨地坪、招牌視覺、動線與燈光」。</p>
+          <p class="mini">照片建議：3～6 張（門面、主視覺、工作區、細節）。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <span id="contact" class="anchor"></span>
+    <section class="section">
+      <h2>聯絡我們</h2>
+      <p class="muted" style="margin:0 0 14px;">
+        需要估價或想先聊聊？最有效率：LINE 傳「坪數 / 格局 / 預算 / 需求」。
+      </p>
+
+      <div class="contact">
+        <div class="row">
+          <div class="ic">☎</div>
+          <div>
+            <div class="muted">電話</div>
+            <a class="big" href="tel:0917737579">0917-737-579</a>
+            <div class="mini">點擊可直接撥號（手機最方便）</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="ic">💬</div>
+          <div>
+            <div class="muted">LINE 官方帳號</div>
+            <a class="big" href="https://lin.ee/SENiV0F" target="_blank" rel="noopener">加 LINE 諮詢</a>
+            <div class="mini">傳「坪數 / 格局 / 預算 / 需求」回覆更快</div>
+          </div>
+        </div>
+
+        <div class="row" style="grid-column:1/-1;">
+          <div class="ic">📍</div>
+          <div>
+            <div class="muted">地址</div>
+            <div class="big" style="font-size:18px;">新北市板橋區四川路一段264號</div>
+            <div class="mini">可約現場討論／丈量（依案件安排）</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>© 2026 Xiuyue Interior Renovation Co., Ltd.｜秀岳設計室內裝修有限公司</div>
+        <div class="muted">網站由 GitHub Pages 提供託管</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating buttons (手機更好用) -->
+  <div class="floatbar" aria-hidden="false">
+    <div class="inner">
+      <a class="fbtn primary" href="https://lin.ee/SENiV0F" target="_blank" rel="noopener"><span class="s"></span>LINE 諮詢</a>
+      <a class="fbtn" href="tel:0917737579">電話</a>
+      <a class="fbtn" href="#contact">地址</a>
+    </div>
   </div>
 </body>
 </html>
