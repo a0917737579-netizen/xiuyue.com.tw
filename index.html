@@ -10,14 +10,14 @@
     :root{
       --bg0:#0f0f10;
       --bg1:#141416;
-      --panel:rgba(255,255,255,.04);
+      --panel:rgba(255,255,255,.045);
       --panel2:rgba(255,255,255,.028);
       --line:rgba(255,255,255,.10);
 
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.70);
 
-      /* 暖一點的金灰（像你圖） */
+      /* 暖黑金（像你圖那種暖一點） */
       --gold:#c9ad78;
       --gold2:#8e7445;
       --goldLine:rgba(201,173,120,.28);
@@ -25,6 +25,7 @@
       --radius:18px;
       --shadow: 0 18px 50px rgba(0,0,0,.55);
       --shadow2: 0 10px 28px rgba(0,0,0,.35);
+      --shadow3: 0 26px 70px rgba(0,0,0,.62);
     }
 
     *{box-sizing:border-box}
@@ -34,20 +35,18 @@
       color:var(--text);
       font-family: system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
       letter-spacing:.02em;
-
-      /* 全頁「深石材」底：有圖用圖，沒圖也會有質感漸層 */
       background:
         radial-gradient(1200px 700px at 12% 10%, rgba(201,173,120,.10), transparent 60%),
         radial-gradient(900px 600px at 85% 25%, rgba(142,116,69,.10), transparent 55%),
         linear-gradient(180deg, #19191b 0%, #101012 100%);
     }
 
-    /* 如果有 hero-texture.jpg，就把它鋪在底層（更像你圖） */
+    /* 全頁紋理底（可有可無，有 hero-texture.jpg 會更像你圖） */
     body::before{
       content:"";
       position:fixed; inset:0;
       background:
-        linear-gradient(180deg, rgba(15,15,16,.84), rgba(15,15,16,.92)),
+        linear-gradient(180deg, rgba(15,15,16,.86), rgba(15,15,16,.92)),
         url("hero-texture.jpg") center/cover no-repeat;
       opacity:.55;
       pointer-events:none;
@@ -56,14 +55,13 @@
 
     a{color:inherit; text-decoration:none}
     img{display:block; max-width:100%}
-
     .wrap{max-width:1100px; margin:0 auto; padding:18px}
     .row{display:flex; align-items:center}
     .between{justify-content:space-between}
     .gap{gap:12px}
     .muted{color:var(--muted)}
 
-    /* Top bar */
+    /* ===== Header ===== */
     header{
       position:sticky; top:0; z-index:40;
       backdrop-filter: blur(12px);
@@ -97,7 +95,7 @@
       background: rgba(201,173,120,.08);
     }
 
-    /* Hero */
+    /* ===== Hero ===== */
     .hero{
       margin-top:18px;
       border-radius:22px;
@@ -122,91 +120,128 @@
       gap:18px;
       padding:22px;
     }
+
+    /* 左邊大格：你要「背後放背景圖＋透明底」 */
     .heroLeft{
       padding:16px 16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.62)),
+        url("hero-left.jpg") center/cover no-repeat;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
     }
-    .heroTitle{
-      font-size:42px;
-      margin:0;
-      letter-spacing:.06em;
-      line-height:1.1;
+    /* 再加一層細紋理，質感更像你圖 */
+    .heroLeft::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(600px 300px at 20% 10%, rgba(201,173,120,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,0));
+      opacity:.55;
+      pointer-events:none;
     }
-    .heroSubtitle{
-      margin:12px 0 0;
-      color:rgba(255,255,255,.78);
-      line-height:1.85;
-      max-width:680px;
-      font-size:15px;
-    }
+    .heroLeft > *{position:relative; z-index:1}
+
     .kicker{
       display:inline-block;
       margin-bottom:10px;
       padding:7px 12px;
       border-radius:999px;
       border:1px solid rgba(201,173,120,.25);
-      background: rgba(0,0,0,.18);
+      background: rgba(0,0,0,.20);
       font-size:13px;
       color:rgba(255,255,255,.76);
     }
-    .actions{margin-top:16px; display:flex; gap:12px; flex-wrap:wrap}
+    .heroTitle{
+      font-size:42px;
+      margin:0;
+      letter-spacing:.06em;
+      line-height:1.1;
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+    .heroSubtitle{
+      margin:12px 0 0;
+      color:rgba(255,255,255,.82);
+      line-height:1.85;
+      max-width:680px;
+      font-size:15px;
+    }
 
+    .actions{margin-top:16px; display:flex; gap:12px; flex-wrap:wrap}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
       padding:11px 16px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
       font-weight:900;
       cursor:pointer;
       white-space:nowrap;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
     }
     .btn.primary{
       border:1px solid rgba(201,173,120,.45);
-      background: linear-gradient(180deg, rgba(201,173,120,.22), rgba(142,116,69,.14));
-      box-shadow:0 14px 28px rgba(0,0,0,.35);
+      background: linear-gradient(180deg, rgba(201,173,120,.24), rgba(142,116,69,.15));
+      box-shadow:0 16px 34px rgba(0,0,0,.45);
     }
+
     .chips{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
     .chip{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.16);
-      color:rgba(255,255,255,.74);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      color:rgba(255,255,255,.78);
       font-size:13px;
     }
     .dot{width:8px; height:8px; border-radius:50%; background:rgba(201,173,120,.95)}
 
+    /* 右邊：立體卡片＋階梯層次 */
     .heroRight{
       display:grid;
       gap:12px;
       align-content:start;
+      perspective: 900px;
     }
     .card{
       border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.16);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.10));
       padding:14px;
-      box-shadow: var(--shadow2);
+      box-shadow: var(--shadow3);
+      backdrop-filter: blur(10px);
+      transform: translateZ(0);
+      position:relative;
+      overflow:hidden;
     }
+    .card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:18px;
+      background: linear-gradient(135deg, rgba(201,173,120,.18), transparent 45%, rgba(255,255,255,.06));
+      opacity:.65;
+      pointer-events:none;
+    }
+    .card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(520px 220px at 20% 0%, rgba(201,173,120,.18), transparent 60%);
+      opacity:.55;
+      pointer-events:none;
+    }
+    .card > *{position:relative; z-index:1}
     .cardTitle{font-weight:900; letter-spacing:.08em; margin:0 0 8px}
-    .card p{margin:0; color:rgba(255,255,255,.72); line-height:1.75; font-size:13px}
+    .card p{margin:0; color:rgba(255,255,255,.76); line-height:1.75; font-size:13px}
 
-    .stats{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-    .stat{
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      padding:12px;
-    }
-    .stat .n{font-size:26px; font-weight:1000; letter-spacing:.02em}
-    .stat .t{font-size:12px; color:rgba(255,255,255,.65); margin-top:2px}
+    .card.l1{transform: translateY(0px) rotateX(1deg);}
+    .card.l2{transform: translateY(10px) rotateX(1.6deg); opacity:.98;}
+    .card.l3{transform: translateY(20px) rotateX(2.2deg); opacity:.96;}
 
-    /* Sections */
+    /* ===== Sections ===== */
     section{margin-top:30px}
     .sectionHeader{
       display:flex; align-items:baseline; gap:12px;
@@ -214,7 +249,6 @@
     }
     .sectionHeader h2{margin:0; font-size:20px; letter-spacing:.08em}
     .sectionHeader span{font-size:12px; color:rgba(255,255,255,.62)}
-
     .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
     .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
 
@@ -245,7 +279,7 @@
     .stepImg{height:120px; border-top:1px solid rgba(255,255,255,.07)}
     .stepImg img{width:100%; height:100%; object-fit:cover}
 
-    /* Footer */
+    /* ===== Footer ===== */
     footer{margin-top:34px; padding:22px 0 26px}
     .footerGrid{display:grid; grid-template-columns:1.2fr .8fr; gap:14px}
     .footerCard{
@@ -272,7 +306,7 @@
       color:rgba(255,255,255,.60);
     }
 
-    /* Floating buttons */
+    /* Floating Buttons */
     .float{
       position:fixed; right:18px; bottom:18px;
       display:flex; flex-direction:column; gap:10px;
@@ -289,7 +323,6 @@
       letter-spacing:.06em;
     }
 
-    /* Responsive */
     @media (max-width:920px){
       .heroInner{grid-template-columns:1fr}
       .heroTitle{font-size:32px}
@@ -297,12 +330,12 @@
       .grid3{grid-template-columns:1fr}
       .grid4{grid-template-columns:1fr 1fr}
       .footerGrid{grid-template-columns:1fr}
+      .card.l2,.card.l3{transform:none}
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="wrap row between">
       <div class="brand">
@@ -323,7 +356,6 @@
   </header>
 
   <main class="wrap">
-    <!-- Hero -->
     <section class="hero" id="top">
       <div class="heroInner">
         <div class="heroLeft">
@@ -348,43 +380,24 @@
         </div>
 
         <div class="heroRight">
-          <div class="card">
-            <p class="cardTitle">你最在意的，我們先講清楚</p>
-            <div class="stats">
-              <div class="stat">
-                <div class="n">150+</div>
-                <div class="t">累積工程項目</div>
-              </div>
-              <div class="stat">
-                <div class="n">20年</div>
-                <div class="t">設計與現場經驗</div>
-              </div>
-              <div class="stat" style="grid-column:1 / span 2;">
-                <div class="n">100%</div>
-                <div class="t">關鍵節點可回報可驗收</div>
-              </div>
-            </div>
+          <div class="card l1">
+            <p class="cardTitle">我們的承諾</p>
+            <p>設計不是交圖就結束，而是一路跟到完工。把材料、工法與現場管理寫進流程，讓成果能被驗證、被負責。</p>
           </div>
 
-          <div class="card">
-            <p class="cardTitle">預算透明</p>
-            <p>先把需求拆清楚、項目化估算，避免施工中反覆加價。</p>
+          <div class="card l2">
+            <p class="cardTitle">工程透明化</p>
+            <p>預算、工期、施工節點全部項目化。不是模糊報價，而是每一筆都能對得起現場。</p>
           </div>
 
-          <div class="card">
-            <p class="cardTitle">進度可掌握</p>
-            <p>工序安排清楚，重要節點可回報，讓你知道每一步做到哪裡。</p>
-          </div>
-
-          <div class="card">
-            <p class="cardTitle">交付有標準</p>
-            <p>完工收尾、清潔、驗收清單，成果被確認、被負責、安心用。</p>
+          <div class="card l3">
+            <p class="cardTitle">交付標準</p>
+            <p>完工不只是「看起來好」，而是結構安全、細節收邊、清潔驗收。交付後安心使用，才算真正完成。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Cases -->
     <section id="cases">
       <div class="sectionHeader">
         <h2>精選作品案例</h2>
@@ -418,7 +431,6 @@
       </div>
     </section>
 
-    <!-- Process -->
     <section id="process">
       <div class="sectionHeader">
         <h2>服務流程</h2>
@@ -464,7 +476,6 @@
       </div>
     </section>
 
-    <!-- Footer / Contact -->
     <footer id="contact">
       <div class="sectionHeader">
         <h2>聯絡我們</h2>
@@ -506,7 +517,6 @@
     </footer>
   </main>
 
-  <!-- Floating Buttons（右下角兩顆，像你圖） -->
   <div class="float" aria-label="快速聯絡">
     <a href="#line" title="LINE 諮詢">LINE</a>
     <a href="tel:0917737579" title="電話">☎</a>
