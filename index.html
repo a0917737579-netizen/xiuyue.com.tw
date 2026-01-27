@@ -1,525 +1,353 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>秀岳設計室內裝修｜把設計落地，讓裝修更安心</title>
-  <meta name="description" content="住宅與商業空間工程承作。把設計落地，讓裝修更安心。電話 0917-737-579｜LINE 諮詢" />
+<meta charset="utf-8">
+<title>秀岳設計室內裝修有限公司｜設計與工程整合</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root{
-      --bg0:#0f0f10;
-      --bg1:#141416;
-      --panel:rgba(255,255,255,.045);
-      --panel2:rgba(255,255,255,.028);
-      --line:rgba(255,255,255,.10);
+<style>
+:root{
+  --bg:#0c0f12;
+  --panel:rgba(18,22,26,.88);
+  --line:rgba(255,255,255,.08);
+  --soft:rgba(255,255,255,.65);
+  --gold:#c8b28a;
+}
 
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.70);
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
+  background:var(--bg);
+  color:#fffn;
+  color:white;
+}
 
-      /* 暖黑金（像你圖那種暖一點） */
-      --gold:#c9ad78;
-      --gold2:#8e7445;
-      --goldLine:rgba(201,173,120,.28);
+/* ===== Header ===== */
+header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(to bottom, rgba(10,12,14,.95), rgba(10,12,14,.75));
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex; gap:12px; align-items:center;
+}
+.logo{
+  width:42px;height:42px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#444,#111);
+  box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+.brandText strong{display:block;font-size:16px;letter-spacing:.5px}
+.brandText span{font-size:12px;color:var(--soft)}
 
-      --radius:18px;
-      --shadow: 0 18px 50px rgba(0,0,0,.55);
-      --shadow2: 0 10px 28px rgba(0,0,0,.35);
-      --shadow3: 0 26px 70px rgba(0,0,0,.62);
-    }
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+  opacity:.85;
+}
+.menu a:hover{opacity:1}
+.menu .btn{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family: system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-      letter-spacing:.02em;
-      background:
-        radial-gradient(1200px 700px at 12% 10%, rgba(201,173,120,.10), transparent 60%),
-        radial-gradient(900px 600px at 85% 25%, rgba(142,116,69,.10), transparent 55%),
-        linear-gradient(180deg, #19191b 0%, #101012 100%);
-    }
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  background:url("https://images.unsplash.com/1600585154340-be6161a56a0c?q=80&w=1600") center/cover no-repeat;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(to right, rgba(10,12,14,.92) 35%, rgba(10,12,14,.65));
+}
 
-    /* 全頁紋理底（可有可無，有 hero-texture.jpg 會更像你圖） */
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      background:
-        linear-gradient(180deg, rgba(15,15,16,.86), rgba(15,15,16,.92)),
-        url("hero-texture.jpg") center/cover no-repeat;
-      opacity:.55;
-      pointer-events:none;
-      z-index:-1;
-    }
+.heroWrap{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+  padding:90px 20px 60px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px;
+}
 
-    a{color:inherit; text-decoration:none}
-    img{display:block; max-width:100%}
-    .wrap{max-width:1100px; margin:0 auto; padding:18px}
-    .row{display:flex; align-items:center}
-    .between{justify-content:space-between}
-    .gap{gap:12px}
-    .muted{color:var(--muted)}
+.heroLeft{
+  padding:40px;
+  background:rgba(10,12,14,.75);
+  border-radius:22px;
+  border:1px solid var(--line);
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
+}
+.heroLeft h1{
+  margin:0 0 16px;
+  font-size:42px;
+  letter-spacing:1px;
+}
+.heroLeft p{
+  line-height:1.7;
+  color:var(--soft);
+  max-width:520px;
+}
 
-    /* ===== Header ===== */
-    header{
-      position:sticky; top:0; z-index:40;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(180deg, rgba(20,20,22,.80), rgba(12,12,14,.70));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .brand{
-      display:flex; align-items:flex-start; gap:12px;
-      padding:10px 0;
-    }
-    .mark{
-      width:34px; height:34px; border-radius:10px;
-      background: linear-gradient(180deg, rgba(201,173,120,.35), rgba(142,116,69,.20));
-      border:1px solid rgba(201,173,120,.25);
-      box-shadow:0 10px 22px rgba(0,0,0,.35);
-    }
-    .brandTitle{font-weight:900; letter-spacing:.14em; line-height:1}
-    .brandSub{font-size:12px; margin-top:6px; color:rgba(255,255,255,.72)}
-    nav a{
-      font-size:13px;
-      padding:9px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      opacity:.92;
-      white-space:nowrap;
-    }
-    nav a:hover{opacity:1}
-    .navBtn{
-      border:1px solid rgba(201,173,120,.35);
-      background: rgba(201,173,120,.08);
-    }
+.cta{
+  margin-top:24px;
+  display:flex;
+  gap:14px;
+}
+.cta a{
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:white;
+  background:rgba(255,255,255,.06);
+}
+.cta a.gold{
+  background:linear-gradient(135deg,#d5c19b,#9f8a5c);
+  color:#111;
+  border:none;
+}
 
-    /* ===== Hero ===== */
-    .hero{
-      margin-top:18px;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(0,0,0,.18);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 500px at 15% 10%, rgba(201,173,120,.16), transparent 60%),
-        radial-gradient(800px 520px at 90% 25%, rgba(142,116,69,.12), transparent 55%);
-      pointer-events:none;
-    }
-    .heroInner{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1.35fr .95fr;
-      gap:18px;
-      padding:22px;
-    }
+/* ===== Hero Right Cards ===== */
+.heroRight{
+  display:grid;
+  gap:14px;
+}
 
-    /* 左邊大格：你要「背後放背景圖＋透明底」 */
-    .heroLeft{
-      padding:16px 16px 18px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.08);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.62)),
-        url("hero-left.jpg") center/cover no-repeat;
-      box-shadow: var(--shadow2);
-      position:relative;
-      overflow:hidden;
-    }
-    /* 再加一層細紋理，質感更像你圖 */
-    .heroLeft::before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(600px 300px at 20% 10%, rgba(201,173,120,.14), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,0));
-      opacity:.55;
-      pointer-events:none;
-    }
-    .heroLeft > *{position:relative; z-index:1}
+.card{
+  padding:18px 20px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.25));
+  border:1px solid var(--line);
+  box-shadow:0 20px 40px rgba(0,0,0,.55);
+}
+.cardTitle{
+  font-size:14px;
+  letter-spacing:1px;
+  color:var(--gold);
+  margin-bottom:6px;
+}
 
-    .kicker{
-      display:inline-block;
-      margin-bottom:10px;
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid rgba(201,173,120,.25);
-      background: rgba(0,0,0,.20);
-      font-size:13px;
-      color:rgba(255,255,255,.76);
-    }
-    .heroTitle{
-      font-size:42px;
-      margin:0;
-      letter-spacing:.06em;
-      line-height:1.1;
-      text-shadow: 0 10px 30px rgba(0,0,0,.55);
-    }
-    .heroSubtitle{
-      margin:12px 0 0;
-      color:rgba(255,255,255,.82);
-      line-height:1.85;
-      max-width:680px;
-      font-size:15px;
-    }
+/* ===== Certificate ===== */
+.certGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:10px;
+}
+.cert{
+  background:rgba(0,0,0,.35);
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line);
+}
+.cert img{
+  width:100%;
+  height:80px;
+  object-fit:cover;
+}
+.cert figcaption{
+  padding:8px;
+  font-size:12px;
+  color:var(--soft);
+}
 
-    .actions{margin-top:16px; display:flex; gap:12px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:11px 16px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.20);
-      font-weight:900;
-      cursor:pointer;
-      white-space:nowrap;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-    }
-    .btn.primary{
-      border:1px solid rgba(201,173,120,.45);
-      background: linear-gradient(180deg, rgba(201,173,120,.24), rgba(142,116,69,.15));
-      box-shadow:0 16px 34px rgba(0,0,0,.45);
-    }
+/* ===== Section ===== */
+.section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+.section h2{
+  letter-spacing:2px;
+  font-size:22px;
+  margin-bottom:20px;
+}
 
-    .chips{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
-      color:rgba(255,255,255,.78);
-      font-size:13px;
-    }
-    .dot{width:8px; height:8px; border-radius:50%; background:rgba(201,173,120,.95)}
+/* ===== Cases ===== */
+.caseGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.case{
+  background:rgba(15,18,22,.85);
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+.case img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.case div{padding:14px}
+.case b{display:block;margin-bottom:4px}
 
-    /* 右邊：立體卡片＋階梯層次 */
-    .heroRight{
-      display:grid;
-      gap:12px;
-      align-content:start;
-      perspective: 900px;
-    }
-    .card{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.10));
-      padding:14px;
-      box-shadow: var(--shadow3);
-      backdrop-filter: blur(10px);
-      transform: translateZ(0);
-      position:relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:18px;
-      background: linear-gradient(135deg, rgba(201,173,120,.18), transparent 45%, rgba(255,255,255,.06));
-      opacity:.65;
-      pointer-events:none;
-    }
-    .card::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(520px 220px at 20% 0%, rgba(201,173,120,.18), transparent 60%);
-      opacity:.55;
-      pointer-events:none;
-    }
-    .card > *{position:relative; z-index:1}
-    .cardTitle{font-weight:900; letter-spacing:.08em; margin:0 0 8px}
-    .card p{margin:0; color:rgba(255,255,255,.76); line-height:1.75; font-size:13px}
+/* ===== Footer ===== */
+footer{
+  background:linear-gradient(to top, rgba(10,12,14,.95), rgba(10,12,14,.85));
+  border-top:1px solid var(--line);
+  margin-top:80px;
+}
+.footerWrap{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
+}
+.footerWrap p{color:var(--soft);line-height:1.7}
 
-    .card.l1{transform: translateY(0px) rotateX(1deg);}
-    .card.l2{transform: translateY(10px) rotateX(1.6deg); opacity:.98;}
-    .card.l3{transform: translateY(20px) rotateX(2.2deg); opacity:.96;}
+/* LINE floating */
+.lineFloat{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:99;
+}
+.lineFloat img{
+  width:64px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
 
-    /* ===== Sections ===== */
-    section{margin-top:30px}
-    .sectionHeader{
-      display:flex; align-items:baseline; gap:12px;
-      margin:0 0 12px;
-    }
-    .sectionHeader h2{margin:0; font-size:20px; letter-spacing:.08em}
-    .sectionHeader span{font-size:12px; color:rgba(255,255,255,.62)}
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
-
-    .case{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      overflow:hidden;
-      box-shadow: var(--shadow2);
-    }
-    .caseImg{height:170px; overflow:hidden}
-    .caseImg img{width:100%; height:100%; object-fit:cover}
-    .caseBody{padding:12px}
-    .caseName{font-weight:900; margin:0 0 6px}
-    .caseMeta{margin:0; font-size:13px; color:rgba(255,255,255,.68)}
-
-    .step{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      overflow:hidden;
-      box-shadow: var(--shadow2);
-    }
-    .stepTop{padding:12px}
-    .stepNo{font-weight:1000; letter-spacing:.08em; color:rgba(255,255,255,.85)}
-    .stepTitle{margin:6px 0 0; font-weight:900}
-    .stepDesc{margin:8px 0 0; font-size:13px; color:rgba(255,255,255,.68); line-height:1.7}
-    .stepImg{height:120px; border-top:1px solid rgba(255,255,255,.07)}
-    .stepImg img{width:100%; height:100%; object-fit:cover}
-
-    /* ===== Footer ===== */
-    footer{margin-top:34px; padding:22px 0 26px}
-    .footerGrid{display:grid; grid-template-columns:1.2fr .8fr; gap:14px}
-    .footerCard{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.14);
-      padding:16px;
-      box-shadow: var(--shadow2);
-    }
-    .footerCard strong{display:block; margin-bottom:10px}
-    .qrRow{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
-    .qrBox{
-      width:120px; height:120px; border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
-      display:grid; place-items:center;
-      overflow:hidden;
-    }
-    .qrBox img{width:100%; height:100%; object-fit:cover}
-
-    .copyright{
-      margin-top:16px;
-      font-size:12px;
-      color:rgba(255,255,255,.60);
-    }
-
-    /* Floating Buttons */
-    .float{
-      position:fixed; right:18px; bottom:18px;
-      display:flex; flex-direction:column; gap:10px;
-      z-index:60;
-    }
-    .float a{
-      width:54px; height:54px; border-radius:18px;
-      border:1px solid rgba(201,173,120,.35);
-      background: rgba(0,0,0,.22);
-      backdrop-filter: blur(10px);
-      display:grid; place-items:center;
-      box-shadow:0 16px 30px rgba(0,0,0,.45);
-      font-weight:1000;
-      letter-spacing:.06em;
-    }
-
-    @media (max-width:920px){
-      .heroInner{grid-template-columns:1fr}
-      .heroTitle{font-size:32px}
-      nav{display:none}
-      .grid3{grid-template-columns:1fr}
-      .grid4{grid-template-columns:1fr 1fr}
-      .footerGrid{grid-template-columns:1fr}
-      .card.l2,.card.l3{transform:none}
-    }
-  </style>
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .heroWrap{grid-template-columns:1fr}
+  .caseGrid{grid-template-columns:1fr}
+  .certGrid{grid-template-columns:1fr}
+  .footerWrap{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="wrap row between">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
-        <div>
-          <div class="brandTitle">秀岳設計室內裝修</div>
-          <div class="brandSub">住宅裝修・商業空間規劃</div>
-        </div>
-      </div>
 
-      <nav class="row gap" aria-label="主選單">
-        <a href="#cases">作品案例</a>
-        <a href="#process">服務流程</a>
-        <a href="#contact" class="navBtn">聯絡我們</a>
-        <a href="#line" class="navBtn">LINE 諮詢</a>
-      </nav>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div class="brandText">
+        <strong>秀岳設計室內裝修有限公司</strong>
+        <span>設計與工程整合｜可追溯・可驗收</span>
+      </div>
     </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="heroInner">
-        <div class="heroLeft">
-          <div class="kicker">專注「做得出來」的設計與工程</div>
-          <h1 class="heroTitle">把設計落地，讓裝修更安心</h1>
-          <p class="heroSubtitle">
-            裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
-            我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
-          </p>
-
-          <div class="actions">
-            <a class="btn primary" href="tel:0917737579">立即電話諮詢：0917-737-579</a>
-            <a class="btn" href="#line">加 LINE 諮詢</a>
-            <a class="btn" href="#contact">查看聯絡方式</a>
-          </div>
-
-          <div class="chips">
-            <span class="chip"><span class="dot"></span>工程管理與品質把關</span>
-            <span class="chip"><span class="dot"></span>重視施工安全與責任</span>
-            <span class="chip"><span class="dot"></span>住宅與商業空間工程承作</span>
-          </div>
-        </div>
-
-        <div class="heroRight">
-          <div class="card l1">
-            <p class="cardTitle">我們的承諾</p>
-            <p>設計不是交圖就結束，而是一路跟到完工。把材料、工法與現場管理寫進流程，讓成果能被驗證、被負責。</p>
-          </div>
-
-          <div class="card l2">
-            <p class="cardTitle">工程透明化</p>
-            <p>預算、工期、施工節點全部項目化。不是模糊報價，而是每一筆都能對得起現場。</p>
-          </div>
-
-          <div class="card l3">
-            <p class="cardTitle">交付標準</p>
-            <p>完工不只是「看起來好」，而是結構安全、細節收邊、清潔驗收。交付後安心使用，才算真正完成。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cases">
-      <div class="sectionHeader">
-        <h2>精選作品案例</h2>
-        <span>可依風格與需求快速對照</span>
-      </div>
-
-      <div class="grid3">
-        <article class="case">
-          <div class="caseImg"><img src="case-01.jpg" alt="案例 01"></div>
-          <div class="caseBody">
-            <p class="caseName">現代霧灰住宅</p>
-            <p class="caseMeta">45坪｜暖灰×石材｜機能整合</p>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="caseImg"><img src="case-02.jpg" alt="案例 02"></div>
-          <div class="caseBody">
-            <p class="caseName">質感書房與餐廳</p>
-            <p class="caseMeta">80坪｜木質×燈光｜收納規劃</p>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="caseImg"><img src="case-03.jpg" alt="案例 03"></div>
-          <div class="caseBody">
-            <p class="caseName">日式具象宅</p>
-            <p class="caseMeta">32坪｜日系簡約｜舒適動線</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="sectionHeader">
-        <h2>服務流程</h2>
-        <span>讓每一步都能被交代、被驗證</span>
-      </div>
-
-      <div class="grid4">
-        <article class="step">
-          <div class="stepTop">
-            <div class="stepNo">01 段落釐清</div>
-            <div class="stepTitle">需求與現場</div>
-            <p class="stepDesc">先把需求拆清楚，避免後面一直改、一直加。</p>
-          </div>
-          <div class="stepImg"><img src="step-01.jpg" alt="流程 01"></div>
-        </article>
-
-        <article class="step">
-          <div class="stepTop">
-            <div class="stepNo">02 預算透明</div>
-            <div class="stepTitle">項目化報價</div>
-            <p class="stepDesc">材料與工法說清楚，預算有依據，才好掌握。</p>
-          </div>
-          <div class="stepImg"><img src="step-02.jpg" alt="流程 02"></div>
-        </article>
-
-        <article class="step">
-          <div class="stepTop">
-            <div class="stepNo">03 現場管理</div>
-            <div class="stepTitle">工序與品質</div>
-            <p class="stepDesc">每個節點都可回報、可追溯，品質不靠運氣。</p>
-          </div>
-          <div class="stepImg"><img src="step-03.jpg" alt="流程 03"></div>
-        </article>
-
-        <article class="step">
-          <div class="stepTop">
-            <div class="stepNo">04 合約施工</div>
-            <div class="stepTitle">驗收交付</div>
-            <p class="stepDesc">完工驗收清單＋交付標準，成果可被確認。</p>
-          </div>
-          <div class="stepImg"><img src="step-04.jpg" alt="流程 04"></div>
-        </article>
-      </div>
-    </section>
-
-    <footer id="contact">
-      <div class="sectionHeader">
-        <h2>聯絡我們</h2>
-        <span>快速評估：坪數 / 格局 / 預算 / 需求</span>
-      </div>
-
-      <div class="footerGrid">
-        <div class="footerCard">
-          <strong>秀岳設計室內裝修有限公司</strong>
-          <div class="muted">電話：0917-737-579</div>
-          <div class="muted">地址：新北市板橋區四川路一段264號</div>
-          <div class="muted" style="margin-top:10px">
-            我們擅長：住宅裝修・商業空間・整合工程管理
-          </div>
-        </div>
-
-        <div class="footerCard" id="line">
-          <strong>LINE 諮詢（官方帳號）</strong>
-          <div class="qrRow">
-            <div class="qrBox">
-              <img src="xiuyue_LINE_QR.png" alt="官方 LINE QR">
-            </div>
-            <div class="muted" style="line-height:1.75">
-              1）手機打開 LINE<br>
-              2）右上角「掃描」<br>
-              3）掃 QR 直接加入<br>
-              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap">
-                <a class="btn primary" href="tel:0917737579">來電洽詢</a>
-                <a class="btn" href="#top">回到上方</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © 2026 Xiuyue Interior Renovation Co., Ltd.｜秀岳設計室內裝修有限公司
-      </div>
-    </footer>
-  </main>
-
-  <div class="float" aria-label="快速聯絡">
-    <a href="#line" title="LINE 諮詢">LINE</a>
-    <a href="tel:0917737579" title="電話">☎</a>
+    <div class="menu">
+      <a href="#cases">作品案例</a>
+      <a href="#flow">服務流程</a>
+      <a href="#contact">聯絡我們</a>
+      <a class="btn" href="#contact">LINE 諮詢</a>
+    </div>
   </div>
+</header>
+
+<section class="hero">
+  <div class="heroWrap">
+    <div class="heroLeft">
+      <h1>把設計落地，讓裝修更安心</h1>
+      <p>
+        裝修不只是效果圖，而是材料、工法、現場管理與完工標準的整合。
+        我們讓每一個環節都能被交代、被驗證、被驗收，交付後安心使用。
+      </p>
+      <div class="cta">
+        <a class="gold" href="#contact">立即諮詢</a>
+        <a href="#cases">查看案例</a>
+      </div>
+    </div>
+
+    <div class="heroRight">
+      <div class="card">
+        <div class="cardTitle">預算透明</div>
+        從需求拆解、報價結構到追加控管，讓每一筆費用都有依據。
+      </div>
+      <div class="card">
+        <div class="cardTitle">現場管理</div>
+        工序排程、工種銜接、品質巡檢，全程可追蹤。
+      </div>
+      <div class="card">
+        <div class="cardTitle">交付標準</div>
+        結構安全、收邊細節、清潔驗收，交付後安心使用。
+      </div>
+
+      <!-- 證照專區 -->
+      <div class="card">
+        <div class="cardTitle">證照專區</div>
+        <div class="certGrid">
+          <figure class="cert">
+            <img src="cert-01.jpg">
+            <figcaption>室內裝修相關證照</figcaption>
+          </figure>
+          <figure class="cert">
+            <img src="cert-02.jpg">
+            <figcaption>專業施工人員證照</figcaption>
+          </figure>
+          <figure class="cert">
+            <img src="cert-03.jpg">
+            <figcaption>木工專業證照</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="section">
+  <h2>精選作品案例</h2>
+  <div class="caseGrid">
+    <div class="case">
+      <img src="https://images.unsplash.com/1595526114035-0d45ed16cfbf?q=80&w=800">
+      <div><b>現代簡約住宅</b>45坪｜全室工程</div>
+    </div>
+    <div class="case">
+      <img src="https://images.unsplash.com/1600121848594-d8644e57abab?q=80&w=800">
+      <div><b>商業空間設計</b>80坪｜展示與接待區</div>
+    </div>
+    <div class="case">
+      <img src="https://images.unsplash.com/1600585152933-8a4e0a1f6e8b?q=80&w=800">
+      <div><b>日式機能宅</b>32坪｜住宅翻新</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footerWrap">
+    <div>
+      <p><b>秀岳設計室內裝修有限公司</b></p>
+      <p>
+        電話：0917-737-579<br>
+        地址：新北市板橋區四川路一段264號
+      </p>
+      <p style="opacity:.5">© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
+    </div>
+    <div>
+      <a class="btn" href="#">LINE 諮詢</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LINE 浮動 QR -->
+<div class="lineFloat">
+  <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
+</div>
+
 </body>
 </html>
