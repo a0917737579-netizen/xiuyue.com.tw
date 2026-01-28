@@ -1,708 +1,824 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>秀岳設計室內裝修有限公司｜住宅裝修・商業空間規劃</title>
 
-  <title>秀岳設計室內裝修有限公司｜新北板橋住宅裝修・商業空間設計與工程整合</title>
-  <meta name="description" content="秀岳設計室內裝修有限公司，專注住宅裝修、商業空間設計與工程整合。政府核發室內裝修業登記，施工品質與安全管理合格。服務新北板橋、台北地區，立即諮詢 0917-737-579。" />
-  <meta name="keywords" content="秀岳設計, 室內裝修, 新北室內設計, 板橋裝修, 住宅裝修, 商業空間設計, 裝修工程, 室內工程公司" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://xiuyue.com.tw/" />
+<style>
+  :root{
+    --bg:#0c0f12;
+    --panel:rgba(18,22,26,.86);
+    --panel2:rgba(18,22,26,.72);
+    --line:rgba(255,255,255,.10);
+    --text:#e8eaed;
+    --muted:#a9b0b6;
+    --accent:#8fd3c8;
+    --accent2:#c9a86a;
+    --radius:18px;
+    --shadow: 0 16px 40px rgba(0,0,0,.55);
+  }
 
-  <!-- Open Graph（FB / LINE / 社群分享） -->
-  <meta property="og:site_name" content="秀岳設計室內裝修有限公司" />
-  <meta property="og:title" content="秀岳設計室內裝修有限公司｜新北板橋住宅裝修・商業空間工程整合" />
-  <meta property="og:description" content="住宅與商業空間設計施工整合，政府核發合法登記，品質與安全管理合格。服務新北板橋與台北地區。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://xiuyue.com.tw/" />
-  <meta property="og:image" content="https://xiuyue.com.tw/images/hero-bg.jpg" />
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",Arial,sans-serif;
+    background: radial-gradient(1200px 600px at 20% 0%, rgba(143,211,200,.10), transparent 60%),
+                radial-gradient(900px 500px at 90% 10%, rgba(201,168,106,.08), transparent 55%),
+                var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+  }
+  a{ color:inherit; text-decoration:none; }
 
-  <style>
-    :root{
-      --bg:#0c0f12;
-      --panel:rgba(18,22,26,.86);
-      --panel2:rgba(18,22,26,.72);
-      --line:rgba(255,255,255,.10);
-      --text:#e8eaed;
-      --muted:#a9b0b6;
-      --accent:#8fd3c8;
-      --radius:18px;
-      --shadow:0 16px 40px rgba(0,0,0,.55);
-    }
+  /* ===== Header ===== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter: blur(12px);
+    background:rgba(12,15,18,.82);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:1200px;
+    margin:0 auto;
+    padding:14px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+    min-width:220px;
+  }
+  .brand .t1{
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:.5px;
+    margin:0;
+  }
+  .brand .t2{
+    margin-top:4px;
+    font-size:12px;
+    color:var(--muted);
+  }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit}
-    img{max-width:100%;display:block}
+  .menu{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  .menu a.link{
+    font-size:14px;
+    opacity:.86;
+  }
+  .menu a.link:hover{ opacity:1; }
 
-    /* ===== Header ===== */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background:rgba(12,15,18,.86);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:1200px; margin:auto;
-      padding:14px 24px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:18px;
-    }
-    .brand{display:flex; flex-direction:column; line-height:1.2}
-    .brand h1{font-size:18px;margin:0;letter-spacing:.5px}
-    .brand small{font-size:12px;color:var(--muted)}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 16px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.04);
+    color:var(--text);
+    cursor:pointer;
+    user-select:none;
+    white-space:nowrap;
+  }
+  .btn:hover{ background:rgba(255,255,255,.06); }
+  .btn.primary{
+    border-color:rgba(143,211,200,.75);
+    background:linear-gradient(180deg, rgba(143,211,200,.95), rgba(143,211,200,.75));
+    color:#071210;
+    font-weight:700;
+  }
 
-    .menu{display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
-    .menu a{ text-decoration:none; font-size:14px; opacity:.88 }
-    .menu a:hover{opacity:1}
+  /* ===== Layout ===== */
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 22px; }
 
-    .btn{
-      padding:10px 16px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:var(--text);
-      cursor:pointer;
-      text-decoration:none;
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
-      white-space:nowrap;
-    }
-    .btn.primary{
-      border-color:var(--accent);
-      background:var(--accent);
-      color:#0c1413;
-      font-weight:700;
-    }
+  /* ===== Hero ===== */
+  .hero{
+    margin:28px auto 8px;
+    display:grid;
+    grid-template-columns: 1.22fr .78fr;
+    gap:22px;
+    align-items:stretch;
+  }
+  .heroLeft{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    min-height:430px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(255,255,255,.10);
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.78)),
+      url("images/hero-bg.jpg") center/cover no-repeat;
+  }
+  .heroLeft::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: radial-gradient(600px 300px at 15% 20%, rgba(143,211,200,.16), transparent 60%),
+                radial-gradient(700px 350px at 85% 20%, rgba(201,168,106,.10), transparent 62%);
+    pointer-events:none;
+    mix-blend-mode: screen;
+    opacity:.55;
+  }
+  .heroContent{
+    position:absolute;
+    inset:0;
+    padding:34px 34px 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:14px;
+  }
+  .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    max-width:560px;
+    padding:10px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    font-size:13px;
+    color:#eaf4f2;
+  }
+  .tag .dot{
+    width:8px;height:8px;border-radius:99px;background:var(--accent);
+    box-shadow:0 0 0 4px rgba(143,211,200,.18);
+  }
+  .heroTitle{
+    margin:0;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.6px;
+  }
+  .heroDesc{
+    margin:0;
+    max-width:610px;
+    color:rgba(233,237,241,.82);
+    line-height:1.75;
+    font-size:15px;
+  }
+  .heroActions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
 
-    /* ===== Layout ===== */
-    .wrap{max-width:1200px; margin:auto; padding:0 24px;}
-    .section{margin:64px auto;}
-    .section h3{font-size:26px; margin:0 0 22px;}
-    .hint{color:var(--muted); font-size:13px; margin:-10px 0 18px; line-height:1.6}
+  .heroRight{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .card{
+    position:relative;
+    border-radius:var(--radius);
+    padding:18px 18px 18px;
+    border:1px solid rgba(255,255,255,.10);
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:inherit;
+    background: radial-gradient(420px 220px at 20% 20%, rgba(143,211,200,.16), transparent 60%),
+                radial-gradient(420px 220px at 90% 10%, rgba(201,168,106,.10), transparent 62%);
+    pointer-events:none;
+    opacity:.55;
+  }
+  .card .inner{ position:relative; }
+  .card h3{ margin:0 0 6px; font-size:16px; letter-spacing:.4px; }
+  .card p{ margin:0; font-size:13px; color:var(--muted); line-height:1.65; }
 
-    /* ===== Hero ===== */
-    .hero{
-      max-width:1200px; margin:40px auto;
-      padding:0 24px;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:24px;
-    }
-    .hero-left{
-      position:relative; border-radius:var(--radius); overflow:hidden;
-      min-height:420px;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.78)),
-        url("images/hero-bg.jpg") center/cover no-repeat;
-      box-shadow:var(--shadow);
-      border:1px solid var(--line);
-    }
-    .hero-content{
-      position:absolute; inset:0;
-      padding:42px;
-      display:flex; flex-direction:column; justify-content:center;
-    }
-    .hero-tag{
-      display:inline-block;
-      padding:6px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      font-size:13px;
-      margin-bottom:16px;
-      width:fit-content;
-    }
-    .hero h2{font-size:38px; margin:0 0 14px; line-height:1.2}
-    .hero p{color:var(--muted); max-width:560px; line-height:1.7; margin:0}
-    .hero-actions{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+  /* ===== Section ===== */
+  section.block{ padding:34px 0 10px; }
+  .h2{
+    margin:0 0 16px;
+    font-size:26px;
+    letter-spacing:.6px;
+  }
+  .sub{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+  }
 
-    .hero-right{display:flex; flex-direction:column; gap:16px}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:var(--shadow);
-    }
-    .card h4{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; font-size:13px; color:var(--muted); line-height:1.6}
+  /* ===== Grid Cards ===== */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:18px;
+  }
+  .tile{
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    box-shadow: 0 12px 30px rgba(0,0,0,.45);
+    cursor:pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+    position:relative;
+  }
+  .tile:hover{ transform: translateY(-2px); box-shadow: 0 18px 44px rgba(0,0,0,.55); }
 
-    /* ===== Cases Grid ===== */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap:18px;
-    }
-    @media (max-width:1100px){ .grid{grid-template-columns:repeat(2,1fr)} .hero{grid-template-columns:1fr} }
-    @media (max-width:560px){ .grid{grid-template-columns:1fr} }
+  /* 案例縮圖（維持原本那種滿版照片感） */
+  .thumb{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    display:block;
+    background:rgba(255,255,255,.03);
+  }
 
-    .tile{
-      border-radius:22px;
-      overflow:hidden;
-      background:var(--panel);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      cursor:pointer;
-      user-select:none;
-      transition:transform .15s ease, border-color .15s ease, filter .15s ease;
-    }
-    .tile:hover{
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,.18);
-      filter:brightness(1.02);
-    }
-    .thumb{
-      width:100%;
-      height:210px;
-      object-fit:cover;
-      background:rgba(255,255,255,.04);
-    }
-    .info{padding:14px 14px 16px}
-    .info h4{margin:0 0 6px; font-size:15px}
-    .info small{color:var(--muted); font-size:13px}
+  /* ✅ 證照縮圖（小張：不裁切、不撐滿） */
+  .certThumbWrap{
+    width:100%;
+    height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36));
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .certThumb{
+    max-width:88%;
+    max-height:86%;
+    object-fit:contain;
+    display:block;
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
+  }
 
-    /* ===== Flow ===== */
-    .flow{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap:18px;
-    }
-    .step{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .step span{font-size:12px;color:var(--accent);font-weight:700}
-    .step h4{margin:8px 0 8px}
-    .step p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+  .tileBody{ padding:12px 14px 14px; }
+  .tileTitle{ margin:0 0 8px; font-size:15px; letter-spacing:.4px; }
+  .tileMeta{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    color:rgba(233,237,241,.70);
+    font-size:13px;
+  }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(0,0,0,.18);
+  }
+  .chip .miniDot{
+    width:7px;height:7px;border-radius:99px;background:var(--accent);
+    box-shadow:0 0 0 3px rgba(143,211,200,.14);
+  }
 
-    /* ===== Certs (縮圖固定小) ===== */
-    .certs{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap:18px;
-    }
-    @media (max-width:900px){ .certs{grid-template-columns:1fr} }
+  /* ===== Flow ===== */
+  .flow{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:16px;
+  }
+  .step{
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(18,22,26,.72);
+    padding:16px;
+  }
+  .step .n{
+    display:inline-flex;
+    font-size:12px;
+    color:rgba(143,211,200,.95);
+    letter-spacing:.8px;
+    margin-bottom:8px;
+  }
+  .step h4{ margin:0 0 8px; font-size:15px; }
+  .step p{ margin:0; color:var(--muted); font-size:13px; line-height:1.65; }
 
-    .cert{
-      border-radius:22px;
-      overflow:hidden;
-      background:var(--panel);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      cursor:pointer;
-      user-select:none;
-      transition:transform .15s ease, border-color .15s ease;
-    }
-    .cert:hover{transform:translateY(-2px); border-color:rgba(255,255,255,.18)}
-    .cert .thumb{
-      height:170px;           /* ✅ 這裡固定縮圖大小（不會一開始超大） */
-      object-fit:cover;
-      object-position:center;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:10px;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--muted);
-      background:rgba(255,255,255,.03);
-      width:fit-content;
-    }
+  /* ===== Footer ===== */
+  footer{
+    margin-top:44px;
+    border-top:1px solid rgba(255,255,255,.08);
+    background:rgba(12,15,18,.88);
+  }
+  .foot{
+    padding:28px 22px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .foot p{
+    margin:6px 0;
+    color:rgba(233,237,241,.76);
+    font-size:14px;
+  }
+  .foot .muted{ color:var(--muted); }
 
-    /* ===== Footer ===== */
-    footer{
-      margin-top:80px;
-      border-top:1px solid var(--line);
-      background:rgba(12,15,18,.9);
-    }
-    .footer-inner{
-      max-width:1200px;
-      margin:auto;
-      padding:38px 24px;
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:18px;
-      align-items:start;
-    }
-    .footer-inner p{margin:6px 0;color:var(--muted);font-size:14px}
+  /* ===== Floating LINE QR ===== */
+  .floatLine{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:90;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-end;
+  }
+  .qr{
+    width:68px;height:68px;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow: 0 12px 26px rgba(0,0,0,.55);
+    background:#fff;
+  }
+  .qr img{ width:100%;height:100%;display:block;object-fit:cover; }
+  .floatBtns{ display:flex; gap:10px; }
+  .floatMini{
+    width:46px;height:46px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(18,22,26,.72);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow: 0 12px 26px rgba(0,0,0,.45);
+  }
+  .floatMini svg{ opacity:.9; }
 
-    /* ===== Floating LINE ===== */
-    .float-line{position:fixed; right:18px; bottom:18px; z-index:99;}
-    .float-line img{
-      width:68px;height:68px;border-radius:12px;
-      box-shadow:0 10px 24px rgba(0,0,0,.55);
-      border:1px solid rgba(255,255,255,.12);
-      background:#0b0e10;
-    }
+  /* ===== Full Page Viewer ===== */
+  .viewer{
+    position:fixed;
+    inset:0;
+    z-index:200;
+    display:none;
+    background:rgba(0,0,0,.72);
+    backdrop-filter: blur(10px);
+  }
+  .viewer.show{ display:block; }
+  .viewerTop{
+    position:absolute;
+    left:0; right:0; top:0;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    background:linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,0));
+  }
+  .viewerTitleWrap{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    max-width:72vw;
+  }
+  .viewerTitle{ margin:0; font-size:15px; letter-spacing:.4px; color:rgba(255,255,255,.92); }
+  .viewerSub{ margin:0; font-size:12px; color:rgba(255,255,255,.65); }
+  .viewerActions{ display:flex; gap:10px; align-items:center; }
+  .viewerBtn{
+    padding:10px 14px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(18,22,26,.60);
+    color:rgba(255,255,255,.88);
+    cursor:pointer;
+    user-select:none;
+  }
+  .viewerBtn:hover{ background:rgba(18,22,26,.74); }
+  .viewerShell{
+    position:absolute;
+    inset:68px 18px 18px;
+    display:grid;
+    grid-template-columns: 1.18fr .82fr;
+    gap:16px;
+    max-width:1200px;
+    margin:0 auto;
+    left:0; right:0;
+  }
+  .viewerMain{
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(18,22,26,.70);
+    box-shadow: var(--shadow);
+    position:relative;
+  }
+  .viewerMain img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+    background:rgba(0,0,0,.22);
+  }
+  .thumbRow{
+    position:absolute;
+    left:14px; right:14px; bottom:14px;
+    display:flex;
+    gap:10px;
+    overflow:auto;
+    padding:10px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(0,0,0,.28);
+    backdrop-filter: blur(10px);
+  }
+  .titem{
+    width:92px;
+    height:58px;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.14);
+    flex:0 0 auto;
+    cursor:pointer;
+    opacity:.82;
+  }
+  .titem.active{ outline:2px solid rgba(143,211,200,.75); opacity:1; }
+  .titem img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    /* ===== Full-page Viewer（全頁作品展示） ===== */
-    .viewer{
-      position:fixed; inset:0;
-      z-index:9999;
-      display:none;
-      background:rgba(0,0,0,.72);
-      backdrop-filter: blur(10px);
-    }
-    .viewer.show{display:block;}
-    .viewer-inner{
-      max-width:1200px;
-      margin:24px auto;
-      padding:0 18px;
-      height:calc(100vh - 48px);
-      display:grid;
-      grid-template-columns: 1.4fr .6fr;
-      gap:18px;
-    }
-    @media (max-width:980px){
-      .viewer-inner{grid-template-columns:1fr; height:auto; padding-bottom:24px}
-    }
-    .viewer-main{
-      background:rgba(18,22,26,.90);
-      border:1px solid var(--line);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      min-height:60vh;
-    }
-    .viewer-topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 14px 10px;
-      border-bottom:1px solid var(--line);
-      gap:10px;
-    }
-    .viewer-title{
-      display:flex; flex-direction:column; gap:4px;
-      min-width:0;
-    }
-    .viewer-title strong{font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-    .viewer-title small{font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-    .viewer-actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
-    .viewer-actions .btn{padding:8px 12px; font-size:13px}
+  .viewerSide{ display:flex; flex-direction:column; gap:14px; }
+  .panel{
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.10);
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    box-shadow: 0 12px 30px rgba(0,0,0,.45);
+    padding:16px;
+    position:relative;
+    overflow:hidden;
+  }
+  .panel::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:inherit;
+    background: radial-gradient(420px 220px at 20% 20%, rgba(143,211,200,.14), transparent 60%),
+                radial-gradient(420px 220px at 90% 10%, rgba(201,168,106,.10), transparent 62%);
+    pointer-events:none;
+    opacity:.55;
+  }
+  .panel .inner{ position:relative; }
+  .panel h4{ margin:0 0 8px; font-size:14px; letter-spacing:.4px; color:rgba(255,255,255,.90); }
+  .panel p{ margin:0; color:rgba(233,237,241,.70); font-size:13px; line-height:1.65; }
+  .panel .cta{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
 
-    .viewer-photo{
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px;
-      background:rgba(0,0,0,.25);
-    }
-    .viewer-photo img{
-      max-height:70vh;
-      width:auto;
-      max-width:100%;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 10px 24px rgba(0,0,0,.45);
-      background:#0b0e10;
-    }
-
-    .viewer-side{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-    .side-card{
-      background:rgba(18,22,26,.90);
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:16px;
-    }
-    .side-card h4{margin:0 0 8px; font-size:14px}
-    .side-card p{margin:0; font-size:13px; color:var(--muted); line-height:1.6}
-
-    .thumbs{
-      margin-top:10px;
-      display:flex;
-      gap:10px;
-      overflow:auto;
-      padding-bottom:4px;
-    }
-    .thumbs button{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      border-radius:14px;
-      padding:0;
-      cursor:pointer;
-      overflow:hidden;
-      flex:0 0 auto;
-    }
-    .thumbs img{
-      width:110px;
-      height:76px;
-      object-fit:cover;
-      display:block;
-      opacity:.9;
-    }
-    .thumbs button.active{
-      border-color:var(--accent);
-    }
-    .thumbs button.active img{opacity:1}
-
-    /* small helper */
-    .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
-  </style>
+  /* ===== Responsive ===== */
+  @media (max-width: 1060px){
+    .hero{ grid-template-columns:1fr; }
+    .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .viewerShell{ grid-template-columns:1fr; inset:68px 14px 14px; }
+    .viewerSide{ flex-direction:row; flex-wrap:wrap; }
+    .panel{ flex:1 1 320px; }
+  }
+  @media (max-width: 560px){
+    .grid{ grid-template-columns: 1fr; }
+    .flow{ grid-template-columns: 1fr; }
+    .heroTitle{ font-size:34px; }
+    .heroContent{ padding:26px; }
+    .menu a.link{ display:none; }
+  }
+</style>
 </head>
 
 <body>
-
 <header>
   <div class="nav">
     <div class="brand">
-      <h1>秀岳設計室內裝修有限公司</h1>
-      <small>住宅裝修・商業空間規劃｜設計與工程整合</small>
+      <div class="t1">秀岳設計室內裝修有限公司</div>
+      <div class="t2">住宅裝修・商業空間規劃｜設計與工程整合</div>
     </div>
 
-    <nav class="menu">
-      <a href="#cases">作品案例</a>
-      <a href="#flow">服務流程</a>
-      <a href="#certs">證照專區</a>
-      <a href="#contact">聯絡我們</a>
-      <a class="btn" href="tel:0917737579">來電</a>
-      <a class="btn primary" href="https://line.me/ti/p/_0FVv6osdU" target="_blank" rel="noopener">LINE 諮詢</a>
-    </nav>
+    <div class="menu">
+      <a class="link" href="#cases">作品案例</a>
+      <a class="link" href="#certs">證照專區</a>
+      <a class="link" href="#flow">服務流程</a>
+      <a class="link" href="#contact">聯絡我們</a>
+
+      <a class="btn" href="tel:0917737579" aria-label="來電">來電</a>
+      <a class="btn primary" href="https://lin.ee/i12R7ca" target="_blank" rel="noreferrer">LINE 諮詢</a>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-content">
-      <div class="hero-tag">專注「做得出來」的設計與工程</div>
-      <h2>把設計落地，讓裝修更安心</h2>
-      <p>
-        裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
-        我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="tel:0917737579">立即電話諮詢：0917-737-579</a>
-        <a class="btn" href="https://line.me/ti/p/_0FVv6osdU" target="_blank" rel="noopener">加入 LINE 諮詢</a>
-        <a class="btn" href="https://lin.ee/i12R7ca" target="_blank" rel="noopener" aria-label="LINE 加入好友按鈕">
-          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="22" />
-          加入好友
-        </a>
-      </div>
-    </div>
-  </div>
+<main class="wrap">
 
-  <div class="hero-right">
-    <div class="card">
-      <h4>預算透明</h4>
-      <p>先釐清需求，項目化估價，避免施工中反覆加價。</p>
-    </div>
-    <div class="card">
-      <h4>進度可控</h4>
-      <p>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</p>
-    </div>
-    <div class="card">
-      <h4>交付有標準</h4>
-      <p>完工收尾、清潔、驗收清單，確保品質安心入住。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Cases ===== -->
-<section id="cases" class="section wrap">
-  <h3>精選作品案例</h3>
-  <p class="hint">點擊任一案例 → 進入「全頁作品展示」，可切換縮圖（多張圖也能看）。</p>
-
-  <div class="grid" id="casesGrid">
-    <!-- 1號：你指定 b12fc... -->
-    <div class="tile" data-title="現代簡約住宅" data-sub="45 坪｜住宅裝修"
-         data-images='["b12fc95b-c33e-4642-9448-a319fdcb4d4d (1).png"]'>
-      <img class="thumb" src="b12fc95b-c33e-4642-9448-a319fdcb4d4d (1).png" alt="現代簡約住宅" />
-      <div class="info">
-        <h4>現代簡約住宅</h4>
-        <small>45 坪｜住宅裝修</small>
+  <section class="hero" id="top">
+    <div class="heroLeft" aria-label="主視覺背景">
+      <div class="heroContent">
+        <div class="tag"><span class="dot"></span>專注「做得出來」的設計與工程</div>
+        <h1 class="heroTitle">把設計落地，讓裝修更安心</h1>
+        <p class="heroDesc">
+          裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
+          我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
+        </p>
+        <div class="heroActions">
+          <a class="btn primary" href="tel:0917737579">立即電話諮詢：0917-737-579</a>
+          <a class="btn" href="https://lin.ee/i12R7ca" target="_blank" rel="noreferrer">加入 LINE 諮詢</a>
+        </div>
       </div>
     </div>
 
-    <!-- 2號：放現在的3（通常是 case-banqiao-03.jpg） -->
-    <div class="tile" data-title="商業辦公空間" data-sub="80 坪｜辦公規劃"
-         data-images='["case-banqiao-03.jpg"]'>
-      <img class="thumb" src="case-banqiao-03.jpg" alt="商業辦公空間" />
-      <div class="info">
-        <h4>商業辦公空間</h4>
-        <small>80 坪｜辦公規劃</small>
-      </div>
+    <div class="heroRight">
+      <div class="card"><div class="inner">
+        <h3>預算透明</h3>
+        <p>先釐清需求，項目化估價，避免施工中反覆加價。</p>
+      </div></div>
+      <div class="card"><div class="inner">
+        <h3>進度可控</h3>
+        <p>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</p>
+      </div></div>
+      <div class="card"><div class="inner">
+        <h3>交付有標準</h3>
+        <p>完工收尾、清潔、驗收清單，確保品質安心入住。</p>
+      </div></div>
     </div>
+  </section>
 
-    <!-- 3號：放現在的1 + 4（兩張可切換） -->
-    <div class="tile" data-title="日式極簡住宅" data-sub="32 坪｜住宅裝修（相簿可切換）"
-         data-images='["case-banqiao-01.jpg","case-banqiao-04.jpg"]'>
-      <img class="thumb" src="case-banqiao-01.jpg" alt="日式極簡住宅" />
-      <div class="info">
-        <h4>日式極簡住宅</h4>
-        <small>32 坪｜住宅裝修</small>
-      </div>
-    </div>
+  <section class="block" id="cases">
+    <h2 class="h2">精選作品案例</h2>
+    <p class="sub">點擊任一案例 → 進入全頁作品展示（底下縮圖可切換）。</p>
+    <div class="grid" id="casesGrid"></div>
+  </section>
 
-    <!-- 4號：放現在的2 -->
-    <div class="tile" data-title="開放式工作空間" data-sub="60 坪｜商業空間"
-         data-images='["case-banqiao-02.jpg"]'>
-      <img class="thumb" src="case-banqiao-02.jpg" alt="開放式工作空間" />
-      <div class="info">
-        <h4>開放式工作空間</h4>
-        <small>60 坪｜商業空間</small>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="block" id="certs">
+    <h2 class="h2">證照專區（點擊可放大）</h2>
+    <p class="sub">✅ 縮圖保持「小張」呈現，點擊後才會進入全頁查看。</p>
+    <div class="grid" id="certsGrid" style="grid-template-columns: repeat(3, minmax(0, 1fr));"></div>
+  </section>
 
-<!-- ===== Flow ===== -->
-<section id="flow" class="section wrap">
-  <h3>服務流程</h3>
-  <div class="flow">
-    <div class="step">
-      <span>01</span>
-      <h4>需求討論</h4>
-      <p>了解預算、風格與空間需求，建立完整規劃方向。</p>
+  <section class="block" id="flow">
+    <h2 class="h2">服務流程</h2>
+    <div class="flow">
+      <div class="step"><div class="n">01</div><h4>需求討論</h4><p>了解預算、風格與空間需求，建立完整規劃方向。</p></div>
+      <div class="step"><div class="n">02</div><h4>設計規劃</h4><p>平面配置、3D 示意與材料建議，讓成果可預期。</p></div>
+      <div class="step"><div class="n">03</div><h4>工程執行</h4><p>現場管理與品質控管，確保工序與標準一致。</p></div>
+      <div class="step"><div class="n">04</div><h4>驗收交付</h4><p>完工檢查、清潔與驗收，安心交屋。</p></div>
     </div>
-    <div class="step">
-      <span>02</span>
-      <h4>設計規劃</h4>
-      <p>平面配置、3D 示意與材料建議，讓成果可預期。</p>
-    </div>
-    <div class="step">
-      <span>03</span>
-      <h4>工程執行</h4>
-      <p>現場管理與品質控管，確保工序與標準一致。</p>
-    </div>
-    <div class="step">
-      <span>04</span>
-      <h4>驗收交付</h4>
-      <p>完工檢查、清潔與驗收，安心交屋。</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== Certs ===== -->
-<section id="certs" class="section wrap">
-  <h3>證照專區（點擊可放大）</h3>
-  <p class="hint">縮圖保持正常大小；點擊才進入全頁放大查看。</p>
+</main>
 
-  <div class="certs" id="certsGrid">
-    <!-- ✅ 你要的順序：1 = 室內裝修業登記證（cert2） -->
-    <div class="cert" data-title="室內裝修業登記證" data-sub="政府核發合法登記"
-         data-images='["images/cert2.png"]'>
-      <img class="thumb" src="images/cert2.png" alt="室內裝修業登記證" />
-      <div class="info">
-        <h4>室內裝修業登記證</h4>
-        <div class="pill">政府核發合法登記</div>
-      </div>
-    </div>
-
-    <!-- ✅ 2 = 施工人員（cert1） -->
-    <div class="cert" data-title="專業施工人員證照" data-sub="技術士合格證明"
-         data-images='["images/cert1.png"]'>
-      <img class="thumb" src="images/cert1.png" alt="專業施工人員證照" />
-      <div class="info">
-        <h4>專業施工人員證照</h4>
-        <div class="pill">技術士合格證明</div>
-      </div>
-    </div>
-
-    <div class="cert" data-title="安全管理合格證" data-sub="施工品質與安全管理"
-         data-images='["images/cert3.png"]'>
-      <img class="thumb" src="images/cert3.png" alt="安全管理合格證" />
-      <div class="info">
-        <h4>安全管理合格證</h4>
-        <div class="pill">施工品質與安全管理</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Footer ===== -->
 <footer id="contact">
-  <div class="footer-inner">
-    <div>
-      <p><strong style="color:var(--text)">秀岳設計室內裝修有限公司</strong></p>
-      <p>電話：0917-737-579</p>
-      <p>地址：新北市板橋區四川路一段264號</p>
-      <p>© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-end">
-      <a class="btn primary" href="https://line.me/ti/p/_0FVv6osdU" target="_blank" rel="noopener">LINE 諮詢</a>
-      <a class="btn" href="tel:0917737579">立即來電</a>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <p><b>秀岳設計室內裝修有限公司</b></p>
+        <p>電話：0917-737-579</p>
+        <p>地址：新北市板橋區四川路一段264號</p>
+        <p class="muted">© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="#top">回到頂部</a>
+        <a class="btn primary" href="https://lin.ee/i12R7ca" target="_blank" rel="noreferrer">LINE 諮詢</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- Floating LINE QR -->
-<div class="float-line" title="LINE 官方帳號">
-  <a href="https://lin.ee/i12R7ca" target="_blank" rel="noopener" aria-label="LINE 加入好友">
-    <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr" alt="LINE QR" />
+<div class="floatLine" aria-label="浮動聯絡">
+  <a class="qr" href="https://lin.ee/i12R7ca" target="_blank" rel="noreferrer" title="LINE 官方帳號">
+    <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr" alt="LINE 官方帳號 QR Code">
   </a>
+  <div class="floatBtns">
+    <a class="floatMini" href="tel:0917737579" title="來電">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M6.6 10.8c1.6 3 3.6 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.4 22 2 13.6 2 3c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z" stroke="white" stroke-opacity=".9" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a class="floatMini" href="https://lin.ee/i12R7ca" target="_blank" rel="noreferrer" title="LINE 諮詢">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M20 12c0 4.4-4 8-9 8-1.2 0-2.3-.2-3.4-.6L4 20l.9-3.2C4.3 15.8 4 13.9 4 12c0-4.4 4-8 9-8s7 2.9 7 8z" stroke="white" stroke-opacity=".9" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
 </div>
 
-<!-- ===== Full-page Viewer ===== -->
-<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
-  <div class="viewer-inner">
-    <div class="viewer-main">
-      <div class="viewer-topbar">
-        <div class="viewer-title">
-          <strong id="viewerTitle">作品展示</strong>
-          <small id="viewerSub">—</small>
-        </div>
-        <div class="viewer-actions">
-          <a class="btn" href="#cases" id="backToList">返回列表</a>
-          <button class="btn" type="button" id="closeViewer">關閉</button>
-        </div>
-      </div>
+<div class="viewer" id="viewer" aria-hidden="true">
+  <div class="viewerTop">
+    <div class="viewerTitleWrap">
+      <p class="viewerTitle" id="viewerTitle">作品</p>
+      <p class="viewerSub" id="viewerSub">底下縮圖可切換（如有多張）</p>
+    </div>
+    <div class="viewerActions">
+      <button class="viewerBtn" id="viewerBack">返回列表</button>
+      <button class="viewerBtn" id="viewerClose">關閉</button>
+    </div>
+  </div>
 
-      <div class="viewer-photo">
-        <img id="viewerImg" alt="作品大圖" src="" />
-      </div>
-
-      <div class="thumbs" id="viewerThumbs" aria-label="縮圖切換列"></div>
+  <div class="viewerShell">
+    <div class="viewerMain">
+      <img id="viewerImg" alt="展示圖片" />
+      <div class="thumbRow" id="thumbRow" aria-label="縮圖切換列"></div>
     </div>
 
-    <div class="viewer-side">
-      <div class="side-card">
-        <h4>專案資訊</h4>
-        <p id="viewerInfo">點下方縮圖即可切換（如有多張）。</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn primary" href="tel:0917737579">立即電話：0917-737-579</a>
-          <a class="btn" href="https://line.me/ti/p/_0FVv6osdU" target="_blank" rel="noopener">LINE 諮詢</a>
+    <div class="viewerSide">
+      <div class="panel">
+        <div class="inner">
+          <h4>專案資訊</h4>
+          <p id="viewerInfo">—</p>
+          <div class="cta">
+            <a class="btn primary" href="tel:0917737579">立即電話：0917-737-579</a>
+            <a class="btn" href="https://lin.ee/i12R7ca" target="_blank" rel="noreferrer">LINE 諮詢</a>
+          </div>
         </div>
       </div>
 
-      <div class="side-card">
-        <h4>你在意的，我們先講清楚</h4>
-        <p>預算透明・工序清楚・節點可驗收・完工交付有標準。</p>
+      <div class="panel">
+        <div class="inner">
+          <h4>你在意的，我們先講清楚</h4>
+          <p>預算透明、工序清楚、節點可驗收、完工交付有標準。</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  (function(){
-    const viewer = document.getElementById('viewer');
-    const viewerImg = document.getElementById('viewerImg');
-    const viewerTitle = document.getElementById('viewerTitle');
-    const viewerSub = document.getElementById('viewerSub');
-    const viewerThumbs = document.getElementById('viewerThumbs');
-    const closeBtn = document.getElementById('closeViewer');
-    const backBtn = document.getElementById('backToList');
+  // ===== Data =====
+  const cases = [
+    {
+      id: "c1",
+      title: "現代簡約住宅",
+      meta: "45 坪｜住宅裝修",
+      info: "以明亮動線與收納整合為核心，搭配溫潤材質與燈光，打造耐看的生活空間。",
+      images: ["b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png"]
+    },
+    {
+      id: "c2",
+      title: "商業辦公空間",
+      meta: "80 坪｜辦公規劃",
+      info: "兼顧機能與效率，動線清楚、照明均勻，讓工作空間更舒適有序。",
+      images: ["case-banqiao-03.jpg"]
+    },
+    {
+      id: "c3",
+      title: "日式極簡住宅",
+      meta: "32 坪｜住宅裝修",
+      info: "留白、木質與柔光，呈現安定、乾淨的空間感。（可切換多張）",
+      images: ["case-banqiao-01.jpg", "case-banqiao-04.jpg"]
+    },
+    {
+      id: "c4",
+      title: "開放式工作空間",
+      meta: "60 坪｜商業空間",
+      info: "以模組化與可擴充為考量，維持俐落視覺並保留彈性調整。",
+      images: ["case-banqiao-02.jpg"]
+    }
+  ];
 
-    let currentImages = [];
-    let lastFocusEl = null;
+  // ✅ 證照順序：1=室內裝修業登記證、2=施工人員、3=安全管理
+  const certs = [
+    {
+      id: "cert1",
+      title: "室內裝修業登記證",
+      meta: "政府核發合法登記",
+      info: "建築物室內裝修業登記證（點擊可放大查看）。",
+      images: ["images/cert1.png"]
+    },
+    {
+      id: "cert2",
+      title: "專業施工人員證照",
+      meta: "技術士合格證明",
+      info: "專業施工人員證照（點擊可放大查看）。",
+      images: ["images/cert2.png"]
+    },
+    {
+      id: "cert3",
+      title: "安全管理合格證",
+      meta: "施工品質與安全管理",
+      info: "安全管理合格證（點擊可放大查看）。",
+      images: ["images/cert3.png"]
+    }
+  ];
 
-    function openViewer({title, sub, images}){
-      lastFocusEl = document.activeElement;
-      currentImages = images || [];
-      viewerTitle.textContent = title || '作品展示';
-      viewerSub.textContent = sub || '—';
+  const casesGrid = document.getElementById("casesGrid");
+  const certsGrid = document.getElementById("certsGrid");
 
-      // reset
-      viewerThumbs.innerHTML = '';
+  function makeTile(item, type){
+    const cover = item.images[0];
+    const el = document.createElement("div");
+    el.className = "tile";
+    el.setAttribute("role","button");
+    el.tabIndex = 0;
 
-      if (!currentImages.length){
-        viewerImg.src = '';
-        viewerImg.alt = '無圖片';
-      } else {
-        setActive(0);
-        buildThumbs();
-      }
-
-      viewer.classList.add('show');
-      document.body.style.overflow = 'hidden';
-
-      // focus close button
-      closeBtn.focus();
+    if(type === "cert"){
+      el.innerHTML = `
+        <div class="certThumbWrap">
+          <img class="certThumb" src="${cover}" alt="${item.title}">
+        </div>
+        <div class="tileBody">
+          <h3 class="tileTitle">${item.title}</h3>
+          <div class="tileMeta">
+            <span class="chip"><span class="miniDot"></span>${item.meta}</span>
+          </div>
+        </div>
+      `;
+    }else{
+      el.innerHTML = `
+        <img class="thumb" src="${cover}" alt="${item.title}">
+        <div class="tileBody">
+          <h3 class="tileTitle">${item.title}</h3>
+          <div class="tileMeta">
+            <span class="chip"><span class="miniDot"></span>${item.meta}</span>
+            ${item.images.length > 1 ? `<span class="chip">相簿可切換</span>` : ``}
+          </div>
+        </div>
+      `;
     }
 
-    function closeViewer(){
-      viewer.classList.remove('show');
-      document.body.style.overflow = '';
-      viewerThumbs.innerHTML = '';
-      currentImages = [];
-      if (lastFocusEl) lastFocusEl.focus();
-    }
+    el.addEventListener("click", ()=>openViewer(item, type));
+    el.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); openViewer(item,type); }});
+    return el;
+  }
 
-    function setActive(idx){
-      const src = currentImages[idx];
-      viewerImg.src = src;
-      viewerImg.alt = (viewerTitle.textContent || '作品') + ' - 第 ' + (idx+1) + ' 張';
-      // active class
-      Array.from(viewerThumbs.querySelectorAll('button')).forEach((btn, i) => {
-        btn.classList.toggle('active', i === idx);
-      });
-    }
+  cases.forEach(c => casesGrid.appendChild(makeTile(c, "case")));
+  certs.forEach(c => certsGrid.appendChild(makeTile(c, "cert")));
 
-    function buildThumbs(){
-      currentImages.forEach((src, idx) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = idx === 0 ? 'active' : '';
-        btn.setAttribute('aria-label', '切換第 ' + (idx+1) + ' 張');
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = '縮圖 ' + (idx+1);
-        btn.appendChild(img);
-        btn.addEventListener('click', () => setActive(idx));
-        viewerThumbs.appendChild(btn);
-      });
-    }
+  // ===== Viewer =====
+  const viewer = document.getElementById("viewer");
+  const viewerImg = document.getElementById("viewerImg");
+  const viewerTitle = document.getElementById("viewerTitle");
+  const viewerSub = document.getElementById("viewerSub");
+  const viewerInfo = document.getElementById("viewerInfo");
+  const thumbRow = document.getElementById("thumbRow");
+  const btnClose = document.getElementById("viewerClose");
+  const btnBack = document.getElementById("viewerBack");
 
-    function bindTiles(selector){
-      document.querySelectorAll(selector).forEach(tile => {
-        tile.setAttribute('tabindex','0');
-        tile.setAttribute('role','button');
-        const title = tile.dataset.title || '';
-        const sub = tile.dataset.sub || '';
-        let images = [];
-        try{
-          images = JSON.parse(tile.dataset.images || '[]');
-        }catch(e){
-          images = [];
-        }
+  let currentItem = null;
+  let currentIndex = 0;
 
-        tile.addEventListener('click', () => openViewer({title, sub, images}));
-        tile.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openViewer({title, sub, images});
-          }
-        });
-      });
-    }
+  function openViewer(item, type){
+    currentItem = item;
+    currentIndex = 0;
 
-    // bind cases + certs
-    bindTiles('#casesGrid .tile');
-    bindTiles('#certsGrid .cert');
+    viewerTitle.textContent = (type === "cert" ? `證照｜${item.title}` : `${item.title}`);
+    viewerSub.textContent = item.images.length > 1 ? "點下方縮圖可切換（如有多張）" : "單張展示";
+    viewerInfo.textContent = item.info || "—";
 
-    closeBtn.addEventListener('click', closeViewer);
-    backBtn.addEventListener('click', closeViewer);
+    buildThumbs(item.images);
+    setImage(0);
 
-    // click outside to close
-    viewer.addEventListener('click', (e) => {
-      if (e.target === viewer) closeViewer();
+    viewer.classList.add("show");
+    viewer.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeViewer(){
+    viewer.classList.remove("show");
+    viewer.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
+
+  function setImage(i){
+    if(!currentItem) return;
+    currentIndex = i;
+    viewerImg.src = currentItem.images[i];
+    [...thumbRow.querySelectorAll(".titem")].forEach((t,idx)=>{
+      t.classList.toggle("active", idx === i);
     });
+  }
 
-    // esc to close
-    document.addEventListener('keydown', (e) => {
-      if (!viewer.classList.contains('show')) return;
-      if (e.key === 'Escape') closeViewer();
+  function buildThumbs(images){
+    thumbRow.innerHTML = "";
+    images.forEach((src, idx)=>{
+      const t = document.createElement("div");
+      t.className = "titem" + (idx===0 ? " active" : "");
+      t.innerHTML = `<img src="${src}" alt="縮圖 ${idx+1}">`;
+      t.addEventListener("click", ()=>setImage(idx));
+      thumbRow.appendChild(t);
     });
-  })();
+  }
+
+  btnClose.addEventListener("click", closeViewer);
+  btnBack.addEventListener("click", closeViewer);
+  viewer.addEventListener("click", (e)=>{ if(e.target === viewer) closeViewer(); });
+
+  window.addEventListener("keydown", (e)=>{
+    if(!viewer.classList.contains("show")) return;
+    if(e.key === "Escape") closeViewer();
+
+    if(currentItem && currentItem.images.length > 1){
+      if(e.key === "ArrowRight") setImage((currentIndex + 1) % currentItem.images.length);
+      if(e.key === "ArrowLeft") setImage((currentIndex - 1 + currentItem.images.length) % currentItem.images.length);
+    }
+  });
 </script>
 
 </body>
