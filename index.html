@@ -55,10 +55,9 @@ header{
   font-size:12px;
   color:var(--muted);
 }
-
 .menu{
   display:flex;
-  gap:20px;
+  gap:18px;
   align-items:center;
 }
 .menu a{
@@ -90,7 +89,7 @@ header{
   margin:40px auto;
   padding:24px;
   display:grid;
-  grid-template-columns:1.2fr .8fr;
+  grid-template-columns: 1.2fr .8fr;
   gap:24px;
 }
 .hero-left{
@@ -99,8 +98,8 @@ header{
   overflow:hidden;
   min-height:420px;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.8)),
-    url("/images/hero-bg.jpg") center/cover no-repeat;
+    linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.8)),
+    url("images/hero-bg.jpg") center/cover no-repeat;
 }
 .hero-content{
   position:absolute;
@@ -143,11 +142,11 @@ header{
   gap:16px;
 }
 .card{
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
   border:1px solid var(--line);
   border-radius:var(--radius);
   padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
   backdrop-filter: blur(8px);
 }
 .card h3{
@@ -164,7 +163,7 @@ header{
 /* ===== Section ===== */
 .section{
   max-width:1200px;
-  margin:70px auto;
+  margin:60px auto;
   padding:0 24px;
 }
 .section h3{
@@ -183,7 +182,9 @@ header{
   overflow:hidden;
   background:var(--panel);
   border:1px solid var(--line);
+  transition:.25s;
 }
+.case:hover{transform:translateY(-4px)}
 .case img{
   width:100%;
   height:180px;
@@ -228,7 +229,7 @@ header{
 /* ===== Certificates ===== */
 .certs{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 .cert{
@@ -240,13 +241,10 @@ header{
   cursor:pointer;
   transition:.25s;
 }
-.cert:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 30px rgba(0,0,0,.5);
-}
+.cert:hover{transform:scale(1.03)}
 .cert img{
   max-width:100%;
-  height:120px;
+  height:160px;
   object-fit:contain;
   margin-bottom:10px;
 }
@@ -255,35 +253,27 @@ header{
 }
 
 /* ===== Lightbox ===== */
-.lightbox{
+#lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.85);
+  background:rgba(0,0,0,.9);
   display:none;
   align-items:center;
   justify-content:center;
   z-index:999;
 }
-.lightbox img{
+#lightbox img{
   max-width:90%;
   max-height:90%;
   border-radius:12px;
   box-shadow:0 20px 60px rgba(0,0,0,.8);
-}
-.lightbox span{
-  position:absolute;
-  top:30px;
-  right:40px;
-  font-size:32px;
-  cursor:pointer;
-  color:#fff;
 }
 
 /* ===== Footer ===== */
 footer{
   margin-top:80px;
   border-top:1px solid var(--line);
-  background:rgba(12,15,18,.95);
+  background:rgba(12,15,18,.9);
 }
 .footer-inner{
   max-width:1200px;
@@ -310,7 +300,7 @@ footer{
   width:68px;
   height:68px;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,.6);
+  box-shadow:0 8px 20px rgba(0,0,0,.5);
 }
 </style>
 </head>
@@ -357,11 +347,11 @@ footer{
     </div>
     <div class="card">
       <h3>進度可控</h3>
-      <p>工序安排清楚，重要節點可驗收。</p>
+      <p>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</p>
     </div>
     <div class="card">
       <h3>交付有標準</h3>
-      <p>完工收尾、清潔與驗收清單，品質有保障。</p>
+      <p>完工收尾、清潔、驗收清單，確保品質安心入住。</p>
     </div>
   </div>
 </section>
@@ -370,24 +360,31 @@ footer{
   <h3>精選作品案例</h3>
   <div class="grid">
     <div class="case">
-      <img src="case-banqiao-01.png">
+      <img src="case-banqiao-01.jpg">
       <div class="info">
         <h4>現代簡約住宅</h4>
         <small>45 坪｜住宅裝修</small>
       </div>
     </div>
     <div class="case">
-      <img src="case-banqiao-02.png">
+      <img src="case-banqiao-02.jpg">
       <div class="info">
-        <h4>商業空間規劃</h4>
-        <small>80 坪｜辦公空間</small>
+        <h4>商業辦公空間</h4>
+        <small>80 坪｜辦公規劃</small>
       </div>
     </div>
     <div class="case">
-      <img src="case-banqiao-03.png">
+      <img src="case-banqiao-03.jpg">
       <div class="info">
-        <h4>日式風格住宅</h4>
+        <h4>日式極簡住宅</h4>
         <small>32 坪｜住宅裝修</small>
+      </div>
+    </div>
+    <div class="case">
+      <img src="case-banqiao-04.jpg">
+      <div class="info">
+        <h4>開放式工作空間</h4>
+        <small>60 坪｜商業空間</small>
       </div>
     </div>
   </div>
@@ -399,22 +396,22 @@ footer{
     <div class="step">
       <span>01</span>
       <h4>需求討論</h4>
-      <p>了解預算與風格，建立完整規劃方向。</p>
+      <p>了解預算、風格與空間需求，建立完整規劃方向。</p>
     </div>
     <div class="step">
       <span>02</span>
       <h4>設計規劃</h4>
-      <p>平面、3D 示意與材料建議。</p>
+      <p>平面配置、3D 示意與材料建議，讓成果可預期。</p>
     </div>
     <div class="step">
       <span>03</span>
       <h4>工程執行</h4>
-      <p>現場管理與品質控管。</p>
+      <p>現場管理與品質控管，確保工序與標準一致。</p>
     </div>
     <div class="step">
       <span>04</span>
       <h4>驗收交付</h4>
-      <p>完工檢查、清潔與驗收。</p>
+      <p>完工檢查、清潔與驗收，安心交屋。</p>
     </div>
   </div>
 </section>
@@ -422,16 +419,16 @@ footer{
 <section id="certs" class="section">
   <h3>證照專區（點擊可放大）</h3>
   <div class="certs">
-    <div class="cert" onclick="openLightbox('/images/cert1.png')">
-      <img src="/images/cert1.png">
+    <div class="cert" onclick="openLightbox('images/cert1.png')">
+      <img src="images/cert1.png">
       <small>室內裝修業登記證</small>
     </div>
-    <div class="cert" onclick="openLightbox('/images/cert2.png')">
-      <img src="/images/cert2.png">
+    <div class="cert" onclick="openLightbox('images/cert2.png')">
+      <img src="images/cert2.png">
       <small>專業施工人員證照</small>
     </div>
-    <div class="cert" onclick="openLightbox('/images/cert3.png')">
-      <img src="/images/cert3.png">
+    <div class="cert" onclick="openLightbox('images/cert3.png')">
+      <img src="images/cert3.png">
       <small>安全管理合格證</small>
     </div>
   </div>
@@ -451,26 +448,18 @@ footer{
   </div>
 </footer>
 
-<!-- Floating LINE QR -->
 <div class="float-line">
-  <a href="https://lin.ee/i12R7ca" target="_blank">
-    <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
-  </a>
+  <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
 </div>
 
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span>&times;</span>
+<div id="lightbox" onclick="this.style.display='none'">
   <img id="lightbox-img">
 </div>
 
 <script>
 function openLightbox(src){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightbox-img").src=src;
-}
-function closeLightbox(){
-  document.getElementById("lightbox").style.display="none";
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
 }
 </script>
 
