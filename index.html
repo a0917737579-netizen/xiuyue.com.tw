@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<title>秀岳設計室內裝修有限公司｜住宅裝修・商業空間規劃｜</title>
+<title>秀岳設計室內裝修有限公司｜住宅裝修・商業空間規劃</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -10,232 +10,285 @@
   --bg:#0c0f12;
   --panel:rgba(18,22,26,.88);
   --line:rgba(255,255,255,.08);
-  --soft:rgba(255,255,255,.65);
-  --gold:#c8b28a;
+  --text:#e8eaed;
+  --muted:#a9b0b6;
+  --accent:#8fd3c8;
+  --radius:18px;
 }
 
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",Arial,sans-serif;
   background:var(--bg);
-  color:#fffn;
-  color:white;
+  color:var(--text);
 }
 
 /* ===== Header ===== */
 header{
-  position:sticky; top:0; z-index:50;
-  background:linear-gradient(to bottom, rgba(10,12,14,.95), rgba(10,12,14,.75));
-  backdrop-filter: blur(8px);
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(12px);
+  background:rgba(12,15,18,.85);
   border-bottom:1px solid var(--line);
 }
 .nav{
   max-width:1200px;
   margin:auto;
-  padding:14px 20px;
+  padding:14px 24px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 .brand{
-  display:flex; gap:12px; align-items:center;
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
 }
-.logo{
-  width:42px;height:42px;
-  border-radius:8px;
-  background:linear-gradient(135deg,#444,#111);
-  box-shadow:0 10px 25px rgba(0,0,0,.6);
+.brand h1{
+  font-size:18px;
+  margin:0;
+  letter-spacing:.5px;
 }
-.brandText strong{display:block;font-size:16px;letter-spacing:.5px}
-.brandText span{font-size:12px;color:var(--soft)}
+.brand small{
+  font-size:12px;
+  color:var(--muted);
+}
 
+.menu{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
 .menu a{
-  color:white;
   text-decoration:none;
-  margin-left:18px;
+  color:var(--text);
   font-size:14px;
   opacity:.85;
 }
 .menu a:hover{opacity:1}
-.menu .btn{
-  padding:8px 14px;
+
+.btn{
+  padding:10px 16px;
   border-radius:999px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  cursor:pointer;
+  text-decoration:none;
+}
+.btn.primary{
+  border-color:var(--accent);
+  color:#0c1413;
+  background:var(--accent);
 }
 
 /* ===== Hero ===== */
 .hero{
-  position:relative;
-  background:url("https://images.unsplash.com/1600585154340-be6161a56a0c?q=80&w=1600") center/cover no-repeat;
-}
-.hero::after{
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(to right, rgba(10,12,14,.92) 35%, rgba(10,12,14,.65));
-}
-
-.heroWrap{
-  position:relative;
-  z-index:2;
   max-width:1200px;
-  margin:auto;
-  padding:90px 20px 60px;
+  margin:40px auto;
+  padding:24px;
   display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:30px;
+  grid-template-columns: 1.2fr .8fr;
+  gap:24px;
 }
 
-.heroLeft{
+.hero-left{
+  position:relative;
+  border-radius:var(--radius);
+  overflow:hidden;
+  min-height:420px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.75)),
+    url("images/hero-bg.jpg") center/cover no-repeat;
+}
+
+.hero-content{
+  position:absolute;
+  inset:0;
   padding:40px;
-  background:rgba(10,12,14,.75);
-  border-radius:22px;
-  border:1px solid var(--line);
-  box-shadow:0 30px 60px rgba(0,0,0,.6);
-}
-.heroLeft h1{
-  margin:0 0 16px;
-  font-size:42px;
-  letter-spacing:1px;
-}
-.heroLeft p{
-  line-height:1.7;
-  color:var(--soft);
-  max-width:520px;
-}
-
-.cta{
-  margin-top:24px;
   display:flex;
-  gap:14px;
-}
-.cta a{
-  text-decoration:none;
-  padding:12px 22px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  color:white;
-  background:rgba(255,255,255,.06);
-}
-.cta a.gold{
-  background:linear-gradient(135deg,#d5c19b,#9f8a5c);
-  color:#111;
-  border:none;
+  flex-direction:column;
+  justify-content:center;
 }
 
-/* ===== Hero Right Cards ===== */
-.heroRight{
-  display:grid;
-  gap:14px;
+.hero-tag{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  font-size:13px;
+  margin-bottom:16px;
+}
+
+.hero h2{
+  font-size:38px;
+  margin:0 0 16px;
+  line-height:1.2;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:520px;
+  line-height:1.6;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin-top:24px;
+  flex-wrap:wrap;
+}
+
+/* ===== Right Cards ===== */
+.hero-right{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
 }
 
 .card{
-  padding:18px 20px;
-  border-radius:18px;
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.25));
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
   border:1px solid var(--line);
-  box-shadow:0 20px 40px rgba(0,0,0,.55);
-}
-.cardTitle{
-  font-size:14px;
-  letter-spacing:1px;
-  color:var(--gold);
-  margin-bottom:6px;
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  backdrop-filter: blur(8px);
 }
 
-/* ===== Certificate ===== */
-.certGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:10px;
+.card h3{
+  margin:0 0 8px;
+  font-size:16px;
 }
-.cert{
-  background:rgba(0,0,0,.35);
-  border-radius:12px;
-  overflow:hidden;
-  border:1px solid var(--line);
-}
-.cert img{
-  width:100%;
-  height:80px;
-  object-fit:cover;
-}
-.cert figcaption{
-  padding:8px;
-  font-size:12px;
-  color:var(--soft);
+.card p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
 }
 
 /* ===== Section ===== */
 .section{
   max-width:1200px;
-  margin:80px auto;
-  padding:0 20px;
+  margin:60px auto;
+  padding:0 24px;
 }
-.section h2{
-  letter-spacing:2px;
-  font-size:22px;
-  margin-bottom:20px;
+
+.section h3{
+  font-size:26px;
+  margin-bottom:24px;
 }
 
 /* ===== Cases ===== */
-.caseGrid{
+.grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap:20px;
 }
 .case{
-  background:rgba(15,18,22,.85);
-  border-radius:18px;
+  border-radius:var(--radius);
   overflow:hidden;
+  background:var(--panel);
   border:1px solid var(--line);
-  box-shadow:0 20px 40px rgba(0,0,0,.5);
 }
 .case img{
   width:100%;
-  height:200px;
+  height:180px;
   object-fit:cover;
+  display:block;
 }
-.case div{padding:14px}
-.case b{display:block;margin-bottom:4px}
+.case .info{
+  padding:14px;
+}
+.case h4{
+  margin:0 0 6px;
+  font-size:15px;
+}
+.case small{
+  color:var(--muted);
+}
+
+/* ===== Flow ===== */
+.flow{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.step{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+}
+.step span{
+  font-size:12px;
+  color:var(--accent);
+}
+.step h4{
+  margin:8px 0;
+}
+.step p{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ===== Certificates ===== */
+.certs{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+}
+.cert{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  text-align:center;
+}
+.cert img{
+  max-width:100%;
+  height:100px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+.cert small{
+  color:var(--muted);
+}
 
 /* ===== Footer ===== */
 footer{
-  background:linear-gradient(to top, rgba(10,12,14,.95), rgba(10,12,14,.85));
-  border-top:1px solid var(--line);
   margin-top:80px;
+  border-top:1px solid var(--line);
+  background:rgba(12,15,18,.9);
 }
-.footerWrap{
+.footer-inner{
   max-width:1200px;
   margin:auto;
-  padding:40px 20px;
+  padding:40px 24px;
   display:grid;
   grid-template-columns:1fr auto;
-  gap:30px;
+  gap:20px;
 }
-.footerWrap p{color:var(--soft);line-height:1.7}
+.footer-inner p{
+  margin:6px 0;
+  color:var(--muted);
+  font-size:14px;
+}
 
-/* LINE floating */
-.lineFloat{
+/* ===== Floating LINE ===== */
+.float-line{
   position:fixed;
-  bottom:20px;
   right:20px;
+  bottom:20px;
   z-index:99;
 }
-.lineFloat img{
-  width:64px;
+.float-line img{
+  width:68px;
+  height:68px;
   border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.6);
-}
-
-/* ===== Responsive ===== */
-@media(max-width:900px){
-  .heroWrap{grid-template-columns:1fr}
-  .caseGrid{grid-template-columns:1fr}
-  .certGrid{grid-template-columns:1fr}
-  .footerWrap{grid-template-columns:1fr}
+  box-shadow:0 8px 20px rgba(0,0,0,.5);
 }
 </style>
 </head>
@@ -245,107 +298,138 @@ footer{
 <header>
   <div class="nav">
     <div class="brand">
-      <div class="logo"></div>
-      <div class="brandText">
-        <strong>秀岳設計室內裝修有限公司</strong>
-        <span>設計與工程整合｜可追溯・可驗收</span>
-      </div>
+      <h1>秀岳設計室內裝修有限公司</h1>
+      <small>住宅裝修・商業空間規劃｜設計與工程整合</small>
     </div>
     <div class="menu">
       <a href="#cases">作品案例</a>
       <a href="#flow">服務流程</a>
+      <a href="#certs">證照專區</a>
       <a href="#contact">聯絡我們</a>
-      <a class="btn" href="#contact">LINE 諮詢</a>
+      <a class="btn" href="tel:0917737579">來電</a>
+      <a class="btn primary" href="https://line.me/ti/p/_0FVv6osdU" target="_blank">LINE 諮詢</a>
     </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="heroWrap">
-    <div class="heroLeft">
-      <h1>把設計落地，讓裝修更安心</h1>
+  <div class="hero-left">
+    <div class="hero-content">
+      <div class="hero-tag">專注「做得出來」的設計與工程</div>
+      <h2>把設計落地，讓裝修更安心</h2>
       <p>
-        裝修不只是效果圖，而是材料、工法、現場管理與完工標準的整合。
-        我們讓每一個環節都能被交代、被驗證、被驗收，交付後安心使用。
+        裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
+        我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
       </p>
-      <div class="cta">
-        <a class="gold" href="#contact">立即諮詢</a>
-        <a href="#cases">查看案例</a>
+      <div class="hero-actions">
+        <a class="btn primary" href="tel:0917737579">立即電話諮詢：0917-737-579</a>
+        <a class="btn" href="https://line.me/ti/p/_0FVv6osdU" target="_blank">加入 LINE 諮詢</a>
       </div>
     </div>
+  </div>
 
-    <div class="heroRight">
-      <div class="card">
-        <div class="cardTitle">預算透明</div>
-        從需求拆解、報價結構到追加控管，讓每一筆費用都有依據。
-      </div>
-      <div class="card">
-        <div class="cardTitle">現場管理</div>
-        工序排程、工種銜接、品質巡檢，全程可追蹤。
-      </div>
-      <div class="card">
-        <div class="cardTitle">交付標準</div>
-        結構安全、收邊細節、清潔驗收，交付後安心使用。
-      </div>
-
-      <!-- 證照專區 -->
-      <div class="card">
-        <div class="cardTitle">證照專區</div>
-        <div class="certGrid">
-          <figure class="cert">
-            <img src="cert-01.jpg">
-            <figcaption>室內裝修相關證照</figcaption>
-          </figure>
-          <figure class="cert">
-            <img src="cert-02.jpg">
-            <figcaption>專業施工人員證照</figcaption>
-          </figure>
-          <figure class="cert">
-            <img src="cert-03.jpg">
-            <figcaption>木工專業證照</figcaption>
-          </figure>
-        </div>
-      </div>
+  <div class="hero-right">
+    <div class="card">
+      <h3>預算透明</h3>
+      <p>先釐清需求，項目化估價，避免施工中反覆加價。</p>
+    </div>
+    <div class="card">
+      <h3>進度可控</h3>
+      <p>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</p>
+    </div>
+    <div class="card">
+      <h3>交付有標準</h3>
+      <p>完工收尾、清潔、驗收清單，確保品質安心入住。</p>
     </div>
   </div>
 </section>
 
 <section id="cases" class="section">
-  <h2>精選作品案例</h2>
-  <div class="caseGrid">
+  <h3>精選作品案例</h3>
+  <div class="grid">
     <div class="case">
-      <img src="https://images.unsplash.com/1595526114035-0d45ed16cfbf?q=80&w=800">
-      <div><b>現代簡約住宅</b>45坪｜全室工程</div>
+      <img src="case-banqiao-01.png">
+      <div class="info">
+        <h4>現代簡約住宅</h4>
+        <small>45 坪｜住宅裝修</small>
+      </div>
     </div>
     <div class="case">
-      <img src="https://images.unsplash.com/1600121848594-d8644e57abab?q=80&w=800">
-      <div><b>商業空間設計</b>80坪｜展示與接待區</div>
+      <img src="case-banqiao-02.png">
+      <div class="info">
+        <h4>商業空間規劃</h4>
+        <small>80 坪｜辦公空間</small>
+      </div>
     </div>
     <div class="case">
-      <img src="https://images.unsplash.com/1600585152933-8a4e0a1f6e8b?q=80&w=800">
-      <div><b>日式機能宅</b>32坪｜住宅翻新</div>
+      <img src="case-banqiao-03.png">
+      <div class="info">
+        <h4>日式風格住宅</h4>
+        <small>32 坪｜住宅裝修</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flow" class="section">
+  <h3>服務流程</h3>
+  <div class="flow">
+    <div class="step">
+      <span>01</span>
+      <h4>需求討論</h4>
+      <p>了解預算、風格與空間需求，建立完整規劃方向。</p>
+    </div>
+    <div class="step">
+      <span>02</span>
+      <h4>設計規劃</h4>
+      <p>平面配置、3D 示意與材料建議，讓成果可預期。</p>
+    </div>
+    <div class="step">
+      <span>03</span>
+      <h4>工程執行</h4>
+      <p>現場管理與品質控管，確保工序與標準一致。</p>
+    </div>
+    <div class="step">
+      <span>04</span>
+      <h4>驗收交付</h4>
+      <p>完工檢查、清潔與驗收，安心交屋。</p>
+    </div>
+  </div>
+</section>
+
+<section id="certs" class="section">
+  <h3>證照專區</h3>
+  <div class="certs">
+    <div class="cert">
+      <img src="images/cert1.png">
+      <small>室內裝修業登記證</small>
+    </div>
+    <div class="cert">
+      <img src="images/cert2.png">
+      <small>專業施工人員證照</small>
+    </div>
+    <div class="cert">
+      <img src="images/cert3.png">
+      <small>安全管理合格證</small>
     </div>
   </div>
 </section>
 
 <footer id="contact">
-  <div class="footerWrap">
+  <div class="footer-inner">
     <div>
-      <p><b>秀岳設計室內裝修有限公司</b></p>
-      <p>
-        電話：0917-737-579<br>
-        地址：新北市板橋區四川路一段264號
-      </p>
-      <p style="opacity:.5">© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
+      <p>秀岳設計室內裝修有限公司</p>
+      <p>電話：0917-737-579</p>
+      <p>地址：新北市板橋區四川路一段264號</p>
+      <p>© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
     </div>
     <div>
-      <a class="btn" href="#">LINE 諮詢</a>
+      <a class="btn primary" href="https://line.me/ti/p/_0FVv6osdU" target="_blank">LINE 諮詢</a>
     </div>
   </div>
 </footer>
 
-<!-- LINE 浮動 QR -->
-<div class="lineFloat">
+<div class="float-line">
   <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
 </div>
 
