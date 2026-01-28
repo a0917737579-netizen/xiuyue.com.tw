@@ -29,7 +29,7 @@ header{
   position:sticky;
   top:0;
   z-index:50;
-  backdrop-filter:blur(12px);
+  backdrop-filter: blur(12px);
   background:rgba(12,15,18,.85);
   border-bottom:1px solid var(--line);
 }
@@ -38,16 +38,18 @@ header{
   margin:auto;
   padding:14px 24px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 .brand{
   display:flex;
   flex-direction:column;
+  line-height:1.2;
 }
 .brand h1{
-  margin:0;
   font-size:18px;
+  margin:0;
+  letter-spacing:.5px;
 }
 .brand small{
   font-size:12px;
@@ -56,7 +58,7 @@ header{
 
 .menu{
   display:flex;
-  gap:18px;
+  gap:20px;
   align-items:center;
 }
 .menu a{
@@ -71,14 +73,15 @@ header{
   padding:10px 16px;
   border-radius:999px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.04);
   color:var(--text);
+  cursor:pointer;
   text-decoration:none;
 }
 .btn.primary{
-  background:var(--accent);
-  color:#0c1413;
   border-color:var(--accent);
+  color:#0c1413;
+  background:var(--accent);
 }
 
 /* ===== Hero ===== */
@@ -90,17 +93,15 @@ header{
   grid-template-columns:1.2fr .8fr;
   gap:24px;
 }
-
 .hero-left{
   position:relative;
   border-radius:var(--radius);
   overflow:hidden;
-  min-height:460px;
+  min-height:420px;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.75)),
-    url("images/hero-bg.jpg") center/cover no-repeat;
+    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.8)),
+    url("/images/hero-bg.jpg") center/cover no-repeat;
 }
-
 .hero-content{
   position:absolute;
   inset:0;
@@ -109,33 +110,29 @@ header{
   flex-direction:column;
   justify-content:center;
 }
-
 .hero-tag{
   display:inline-block;
   padding:6px 14px;
   border-radius:999px;
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
   border:1px solid var(--line);
   font-size:13px;
   margin-bottom:16px;
 }
-
 .hero h2{
-  font-size:40px;
+  font-size:38px;
   margin:0 0 16px;
   line-height:1.2;
 }
-
 .hero p{
-  max-width:520px;
   color:var(--muted);
+  max-width:520px;
   line-height:1.6;
 }
-
 .hero-actions{
-  margin-top:24px;
   display:flex;
   gap:12px;
+  margin-top:24px;
   flex-wrap:wrap;
 }
 
@@ -146,12 +143,12 @@ header{
   gap:16px;
 }
 .card{
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   border:1px solid var(--line);
   border-radius:var(--radius);
   padding:20px;
-  box-shadow:0 12px 28px rgba(0,0,0,.5);
-  backdrop-filter:blur(8px);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  backdrop-filter: blur(8px);
 }
 .card h3{
   margin:0 0 8px;
@@ -178,19 +175,20 @@ header{
 /* ===== Cases ===== */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap:20px;
 }
 .case{
-  background:var(--panel);
-  border:1px solid var(--line);
   border-radius:var(--radius);
   overflow:hidden;
+  background:var(--panel);
+  border:1px solid var(--line);
 }
 .case img{
   width:100%;
   height:180px;
   object-fit:cover;
+  display:block;
 }
 .case .info{
   padding:14px;
@@ -206,7 +204,7 @@ header{
 /* ===== Flow ===== */
 .flow{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 .step{
@@ -230,7 +228,7 @@ header{
 /* ===== Certificates ===== */
 .certs{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
 }
 .cert{
@@ -239,15 +237,46 @@ header{
   border-radius:var(--radius);
   padding:16px;
   text-align:center;
+  cursor:pointer;
+  transition:.25s;
+}
+.cert:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
 }
 .cert img{
-  width:100%;
+  max-width:100%;
   height:120px;
   object-fit:contain;
   margin-bottom:10px;
 }
 .cert small{
   color:var(--muted);
+}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.8);
+}
+.lightbox span{
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:32px;
+  cursor:pointer;
+  color:#fff;
 }
 
 /* ===== Footer ===== */
@@ -281,7 +310,7 @@ footer{
   width:68px;
   height:68px;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,.5);
+  box-shadow:0 8px 20px rgba(0,0,0,.6);
 }
 </style>
 </head>
@@ -328,11 +357,11 @@ footer{
     </div>
     <div class="card">
       <h3>進度可控</h3>
-      <p>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</p>
+      <p>工序安排清楚，重要節點可驗收。</p>
     </div>
     <div class="card">
       <h3>交付有標準</h3>
-      <p>完工收尾、清潔、驗收清單，確保品質安心入住。</p>
+      <p>完工收尾、清潔與驗收清單，品質有保障。</p>
     </div>
   </div>
 </section>
@@ -370,39 +399,39 @@ footer{
     <div class="step">
       <span>01</span>
       <h4>需求討論</h4>
-      <p>了解預算、風格與空間需求，建立完整規劃方向。</p>
+      <p>了解預算與風格，建立完整規劃方向。</p>
     </div>
     <div class="step">
       <span>02</span>
       <h4>設計規劃</h4>
-      <p>平面配置、3D 示意與材料建議，讓成果可預期。</p>
+      <p>平面、3D 示意與材料建議。</p>
     </div>
     <div class="step">
       <span>03</span>
       <h4>工程執行</h4>
-      <p>現場管理與品質控管，確保工序與標準一致。</p>
+      <p>現場管理與品質控管。</p>
     </div>
     <div class="step">
       <span>04</span>
       <h4>驗收交付</h4>
-      <p>完工檢查、清潔與驗收，安心交屋。</p>
+      <p>完工檢查、清潔與驗收。</p>
     </div>
   </div>
 </section>
 
 <section id="certs" class="section">
-  <h3>證照專區</h3>
+  <h3>證照專區（點擊可放大）</h3>
   <div class="certs">
-    <div class="cert">
-      <img src="images/cert1.png">
+    <div class="cert" onclick="openLightbox('/images/cert1.png')">
+      <img src="/images/cert1.png">
       <small>室內裝修業登記證</small>
     </div>
-    <div class="cert">
-      <img src="images/cert2.png">
+    <div class="cert" onclick="openLightbox('/images/cert2.png')">
+      <img src="/images/cert2.png">
       <small>專業施工人員證照</small>
     </div>
-    <div class="cert">
-      <img src="images/cert3.png">
+    <div class="cert" onclick="openLightbox('/images/cert3.png')">
+      <img src="/images/cert3.png">
       <small>安全管理合格證</small>
     </div>
   </div>
@@ -422,9 +451,28 @@ footer{
   </div>
 </footer>
 
+<!-- Floating LINE QR -->
 <div class="float-line">
-  <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
+  <a href="https://lin.ee/i12R7ca" target="_blank">
+    <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
+  </a>
 </div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span>&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=src;
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
 
 </body>
 </html>
