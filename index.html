@@ -1,113 +1,383 @@
-<style>
-  .cases {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
-  }
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>秀岳設計室內裝修有限公司｜設計與工程整合</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  .cases h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-  }
-
-  .case-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-
-  .case-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .case-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  .case-card img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-  .case-card h3 {
-    text-align: center;
-    padding: 16px;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-  }
-
-  /* 第三個案例：左右對半雙圖版型 */
-  .case-card.dual {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .dual-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .dual-images img {
-    height: 200px;
-  }
-
-  /* 響應式 */
-  @media (max-width: 1024px) {
-    .case-grid {
-      grid-template-columns: repeat(2, 1fr);
+  <style>
+    :root {
+      --dark: #1c1c1c;
+      --gray: #666;
+      --light: #f5f5f5;
+      --accent: #b89b6a;
     }
-  }
 
-  @media (max-width: 600px) {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+    }
+
+    .nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: url("images/hero-bg.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      color: #fff;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      margin-bottom: 50px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: var(--gray);
+    }
+
+    .about-text strong {
+      color: var(--dark);
+    }
+
+    /* CASES */
     .case-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .case-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .case-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-card h3 {
+      text-align: center;
+      padding: 16px;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
+
+    .dual-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
     .dual-images img {
-      height: 180px;
+      height: 220px;
     }
-  }
-</style>
 
-<section class="cases">
+    /* CERTS */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .cert-card {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .cert-card img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: var(--light);
+      padding: 50px;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-box p {
+      margin-bottom: 12px;
+    }
+
+    .map {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      border: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 100px;
+    }
+
+    /* RWD */
+    @media (max-width: 1024px) {
+      .case-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">秀岳設計室內裝修有限公司</div>
+    <div>
+      <a href="#about">關於我們</a>
+      <a href="#cases">精選案例</a>
+      <a href="#certs">專業證照</a>
+      <a href="#contact">聯絡我們</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>設計與工程整合</h1>
+    <p>
+      專注「做得出來」的設計與工程  
+      把設計落地，讓裝修更安心
+    </p>
+    <a href="#contact" class="btn">立即諮詢</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>關於秀岳</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p><strong>裝修不只是好看，而是每一步都經得起驗收。</strong></p>
+      <p>
+        秀岳設計室內裝修有限公司專注於住宅與商業空間的設計與工程整合，
+        從材料選擇、工法規劃到現場管理與完工驗收，確保每個細節都符合長期使用標準。
+      </p>
+      <p>
+        我們相信，好的設計必須能被真正落地，
+        不只是在圖面上好看，而是在生活中長久安心。
+      </p>
+    </div>
+    <div>
+      <img src="images/case-banqiao-01.jpg" style="width:100%; border-radius:16px;" alt="關於秀岳">
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
   <h2>精選案例</h2>
 
   <div class="case-grid">
 
-    <!-- CASE 1 -->
     <div class="case-card">
       <img src="images/b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png" alt="案例一">
-      <h3>案例一</h3>
+      <h3>板橋現代風住宅</h3>
     </div>
 
-    <!-- CASE 2 -->
     <div class="case-card">
       <img src="images/case-banqiao-03.jpg" alt="案例二">
-      <h3>案例二</h3>
+      <h3>開放式客餐廳設計</h3>
     </div>
 
-    <!-- CASE 3（左右雙圖高端版） -->
-    <div class="case-card dual">
+    <div class="case-card">
       <div class="dual-images">
         <img src="images/case-banqiao-01.jpg" alt="案例三-1">
         <img src="images/case-banqiao-04.jpg" alt="案例三-2">
       </div>
-      <h3>案例三</h3>
+      <h3>小坪數機能整合</h3>
     </div>
 
-    <!-- CASE 4 -->
     <div class="case-card">
       <img src="images/case-banqiao-02.jpg" alt="案例四">
-      <h3>案例四</h3>
+      <h3>臥室收納與採光</h3>
     </div>
 
   </div>
 </section>
+
+<!-- CERTS -->
+<section id="certs">
+  <h2>專業證照</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <img src="images/cert1.png" alt="證照一">
+    </div>
+    <div class="cert-card">
+      <img src="images/cert2.png" alt="證照二">
+    </div>
+    <div class="cert-card">
+      <img src="images/cert3.png" alt="證照三">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>聯絡我們</h2>
+
+  <div class="contact-box">
+    <div>
+      <p><strong>秀岳設計室內裝修有限公司</strong></p>
+      <p>地址：新北市板橋區四川路一段264號</p>
+      <p>電話：0917-737-579</p>
+      <p>網站：xiuyue.com.tw</p>
+      <p>官方 LINE：請掃描網站右側 QR 加入</p>
+    </div>
+
+    <iframe
+      class="map"
+      src="https://www.google.com/maps?q=新北市板橋區四川路一段264號&output=embed">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 秀岳設計室內裝修有限公司 | 設計與工程整合</p>
+</footer>
+
+</body>
+</html>
