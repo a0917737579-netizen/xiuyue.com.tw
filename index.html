@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#0c0f12;
-  --panel:rgba(18,22,26,.88);
+  --panel:rgba(18,22,26,.9);
   --line:rgba(255,255,255,.08);
   --text:#e8eaed;
   --muted:#a9b0b6;
@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
 }
@@ -29,8 +29,8 @@ header{
   position:sticky;
   top:0;
   z-index:50;
-  backdrop-filter: blur(12px);
-  background:rgba(12,15,18,.85);
+  backdrop-filter:blur(14px);
+  background:rgba(12,15,18,.9);
   border-bottom:1px solid var(--line);
 }
 .nav{
@@ -58,7 +58,7 @@ header{
 
 .menu{
   display:flex;
-  gap:20px;
+  gap:18px;
   align-items:center;
 }
 .menu a{
@@ -70,14 +70,16 @@ header{
 .menu a:hover{opacity:1}
 
 .btn{
-  padding:10px 16px;
+  padding:10px 18px;
   border-radius:999px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
+  background:rgba(255,255,255,.05);
   color:var(--text);
   cursor:pointer;
   text-decoration:none;
+  transition:.2s;
 }
+.btn:hover{transform:translateY(-1px)}
 .btn.primary{
   border-color:var(--accent);
   color:#0c1413;
@@ -90,7 +92,7 @@ header{
   margin:40px auto;
   padding:24px;
   display:grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns:1.2fr .8fr;
   gap:24px;
 }
 
@@ -98,16 +100,17 @@ header{
   position:relative;
   border-radius:var(--radius);
   overflow:hidden;
-  min-height:420px;
+  min-height:440px;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.75)),
-    url("images/hero-bg.jpg") center/cover no-repeat;
+    linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.85)),
+    radial-gradient(circle at top right, rgba(143,211,200,.15), transparent 60%),
+    url("https://images.unsplash.com/1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
 }
 
 .hero-content{
   position:absolute;
   inset:0;
-  padding:40px;
+  padding:48px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -115,16 +118,17 @@ header{
 
 .hero-tag{
   display:inline-block;
-  padding:6px 14px;
+  padding:6px 16px;
   border-radius:999px;
-  background:rgba(255,255,255,.06);
+  background:rgba(255,255,255,.08);
   border:1px solid var(--line);
   font-size:13px;
-  margin-bottom:16px;
+  margin-bottom:18px;
+  width:max-content;
 }
 
 .hero h2{
-  font-size:38px;
+  font-size:40px;
   margin:0 0 16px;
   line-height:1.2;
 }
@@ -132,13 +136,13 @@ header{
 .hero p{
   color:var(--muted);
   max-width:520px;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 .hero-actions{
   display:flex;
   gap:12px;
-  margin-top:24px;
+  margin-top:26px;
   flex-wrap:wrap;
 }
 
@@ -146,16 +150,19 @@ header{
 .hero-right{
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:18px;
 }
 
 .card{
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-  backdrop-filter: blur(8px);
+  padding:22px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter: blur(10px);
 }
 
 .card h3{
@@ -172,10 +179,9 @@ header{
 /* ===== Section ===== */
 .section{
   max-width:1200px;
-  margin:60px auto;
+  margin:70px auto;
   padding:0 24px;
 }
-
 .section h3{
   font-size:26px;
   margin-bottom:24px;
@@ -184,15 +190,17 @@ header{
 /* ===== Cases ===== */
 .grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
 }
 .case{
   border-radius:var(--radius);
   overflow:hidden;
   background:var(--panel);
   border:1px solid var(--line);
+  transition:.2s;
 }
+.case:hover{transform:translateY(-4px)}
 .case img{
   width:100%;
   height:180px;
@@ -213,7 +221,7 @@ header{
 /* ===== Flow ===== */
 .flow{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 .step{
@@ -237,19 +245,19 @@ header{
 /* ===== Certificates ===== */
 .certs{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
 }
 .cert{
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:16px;
+  padding:18px;
   text-align:center;
 }
 .cert img{
   max-width:100%;
-  height:100px;
+  height:110px;
   object-fit:contain;
   margin-bottom:10px;
 }
@@ -261,7 +269,7 @@ header{
 footer{
   margin-top:80px;
   border-top:1px solid var(--line);
-  background:rgba(12,15,18,.9);
+  background:rgba(12,15,18,.95);
 }
 .footer-inner{
   max-width:1200px;
@@ -285,10 +293,11 @@ footer{
   z-index:99;
 }
 .float-line img{
-  width:68px;
-  height:68px;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,.5);
+  width:72px;
+  height:72px;
+  border-radius:14px;
+  box-shadow:0 10px 24px rgba(0,0,0,.6);
+  background:#fff;
 }
 </style>
 </head>
@@ -348,21 +357,21 @@ footer{
   <h3>精選作品案例</h3>
   <div class="grid">
     <div class="case">
-      <img src="case-banqiao-01.png" alt="現代簡約住宅">
+      <img src="https://images.unsplash.com/1600121848594-d8644e57abab?q=80&w=1200&auto=format&fit=crop">
       <div class="info">
         <h4>現代簡約住宅</h4>
         <small>45 坪｜住宅裝修</small>
       </div>
     </div>
     <div class="case">
-      <img src="case-banqiao-02.png" alt="商業空間規劃">
+      <img src="https://images.unsplash.com/1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
       <div class="info">
         <h4>商業空間規劃</h4>
         <small>80 坪｜辦公空間</small>
       </div>
     </div>
     <div class="case">
-      <img src="case-banqiao-03.png" alt="日式風格住宅">
+      <img src="https://images.unsplash.com/1600566753151-384129cf4e3e?q=80&w=1200&auto=format&fit=crop">
       <div class="info">
         <h4>日式風格住宅</h4>
         <small>32 坪｜住宅裝修</small>
@@ -401,15 +410,15 @@ footer{
   <h3>證照專區</h3>
   <div class="certs">
     <div class="cert">
-      <img src="images/cert1.png" alt="室內裝修業登記證">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Certificate_icon.svg/512px-Certificate_icon.svg.png">
       <small>室內裝修業登記證</small>
     </div>
     <div class="cert">
-      <img src="images/cert2.png" alt="專業施工人員證照">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Approval_icon.svg/512px-Approval_icon.svg.png">
       <small>專業施工人員證照</small>
     </div>
     <div class="cert">
-      <img src="images/cert3.png" alt="安全管理合格證">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Safety_icon.svg/512px-Safety_icon.svg.png">
       <small>安全管理合格證</small>
     </div>
   </div>
@@ -430,7 +439,9 @@ footer{
 </footer>
 
 <div class="float-line">
-  <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr" alt="秀岳官方 LINE QR">
+  <a href="https://lin.ee/i12R7ca" target="_blank">
+    <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
+  </a>
 </div>
 
 </body>
