@@ -8,6 +8,7 @@
 <style>
 :root{
   --bg:#0c0f12;
+  --panel:rgba(18,22,26,.88);
   --line:rgba(255,255,255,.08);
   --text:#e8eaed;
   --muted:#a9b0b6;
@@ -19,231 +20,208 @@
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",Arial,sans-serif;
-  background:
-    radial-gradient(1200px 600px at 20% 0%, rgba(143,211,200,.08), rgba(0,0,0,0)),
-    radial-gradient(900px 500px at 85% 15%, rgba(255,255,255,.05), rgba(0,0,0,0)),
-    var(--bg);
+  background:var(--bg);
   color:var(--text);
 }
 
-/* Header */
+/* ===== Header ===== */
 header{
-  position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(12px);
-  background:rgba(12,15,18,.82);
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(12,15,18,.85);
   border-bottom:1px solid var(--line);
 }
 .nav{
-  max-width:1200px; margin:auto;
+  max-width:1200px;
+  margin:auto;
   padding:14px 24px;
-  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.brand{display:flex; flex-direction:column; line-height:1.2; min-width:240px;}
-.brand h1{font-size:18px; margin:0; letter-spacing:.3px;}
-.brand small{font-size:12px; color:var(--muted); margin-top:4px;}
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+.brand h1{font-size:18px;margin:0}
+.brand small{font-size:12px;color:var(--muted)}
 
-.menu{display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
-.menu a{color:var(--text); text-decoration:none; font-size:14px; opacity:.85; white-space:nowrap;}
+.menu{display:flex;gap:20px;align-items:center}
+.menu a{text-decoration:none;color:var(--text);font-size:14px;opacity:.85}
 .menu a:hover{opacity:1}
 
 .btn{
-  padding:10px 16px; border-radius:999px;
+  padding:10px 16px;
+  border-radius:999px;
   border:1px solid var(--line);
   background:rgba(255,255,255,.04);
   color:var(--text);
   text-decoration:none;
-  white-space:nowrap;
 }
-.btn:hover{background:rgba(255,255,255,.06)}
 .btn.primary{
-  border-color:rgba(143,211,200,.55);
-  color:#071211;
-  background:linear-gradient(180deg, rgba(143,211,200,1), rgba(143,211,200,.88));
+  background:var(--accent);
+  color:#0c1413;
+  border-color:var(--accent);
 }
 
-/* Hero */
-.hero{max-width:1200px; margin:34px auto 10px; padding:0 24px;}
-.hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px;}
-
+/* ===== Hero ===== */
+.hero{
+  max-width:1200px;
+  margin:40px auto;
+  padding:24px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:24px;
+}
 .hero-left{
   position:relative;
   border-radius:var(--radius);
   overflow:hidden;
   min-height:420px;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.78)),
+    linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.75)),
     url("images/hero-bg.jpg") center/cover no-repeat;
-  border:1px solid var(--line);
-  box-shadow:0 18px 60px rgba(0,0,0,.55);
-}
-.hero-left::after{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    radial-gradient(600px 300px at 18% 18%, rgba(143,211,200,.10), rgba(0,0,0,0)),
-    radial-gradient(700px 420px at 90% 10%, rgba(255,255,255,.06), rgba(0,0,0,0));
-  pointer-events:none;
 }
 .hero-content{
-  position:absolute; inset:0;
+  position:absolute;
+  inset:0;
   padding:40px;
-  display:flex; flex-direction:column; justify-content:center; gap:12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 .hero-tag{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:8px 14px; border-radius:999px;
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
   background:rgba(255,255,255,.06);
   border:1px solid var(--line);
-  font-size:13px; width:fit-content;
+  font-size:13px;
+  margin-bottom:16px;
 }
-.dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 18px rgba(143,211,200,.45);}
-.hero h2{font-size:40px; margin:0; line-height:1.18; letter-spacing:.3px;}
-.hero p{margin:0; color:var(--muted); max-width:560px; line-height:1.7;}
-.hero-actions{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;}
+.hero h2{font-size:38px;margin:0 0 16px}
+.hero p{color:var(--muted);max-width:520px;line-height:1.6}
+.hero-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
 
-.hero-right{display:flex; flex-direction:column; gap:16px;}
+/* ===== Right Cards ===== */
+.hero-right{display:flex;flex-direction:column;gap:16px}
 .card{
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
   border:1px solid var(--line);
   border-radius:var(--radius);
   padding:20px;
-  box-shadow:0 14px 40px rgba(0,0,0,.45);
-  backdrop-filter: blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
-.card h3{margin:0 0 8px; font-size:16px; letter-spacing:.3px;}
-.card p{margin:0; font-size:13px; color:var(--muted); line-height:1.7;}
 
-/* Sections */
-.section{max-width:1200px; margin:54px auto; padding:0 24px;}
-.section h3{font-size:26px; margin:0 0 22px; letter-spacing:.3px;}
+/* ===== Section ===== */
+.section{max-width:1200px;margin:60px auto;padding:0 24px}
+.section h3{font-size:26px;margin-bottom:24px}
 
-/* Cases */
-.grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:18px;}
+/* ===== Cases ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 .case{
-  border-radius:22px; overflow:hidden;
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--panel);
   border:1px solid var(--line);
-  box-shadow:0 18px 55px rgba(0,0,0,.45);
 }
-.case img{width:100%; height:190px; object-fit:cover; display:block; background:rgba(0,0,0,.22);}
-.case .info{padding:14px 14px 16px;}
-.case h4{margin:0 0 6px; font-size:15px;}
-.case small{color:var(--muted); font-size:13px;}
+.case img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  cursor:pointer;
+}
+.case .info{padding:14px}
+.case h4{margin:0 0 6px}
+.case small{color:var(--muted)}
 
-/* Flow */
-.flow{display:grid; grid-template-columns: repeat(4,1fr); gap:18px;}
+/* ===== Flow ===== */
+.flow{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
 .step{
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  background:var(--panel);
   border:1px solid var(--line);
-  border-radius:22px;
+  border-radius:var(--radius);
   padding:18px;
 }
-.step span{display:inline-block; font-size:12px; color:rgba(143,211,200,.95);}
-.step h4{margin:10px 0 8px; letter-spacing:.2px;}
-.step p{margin:0; font-size:13px; color:var(--muted); line-height:1.7;}
+.step span{font-size:12px;color:var(--accent)}
+.step p{font-size:13px;color:var(--muted)}
 
-/* Certificates */
-.certs{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px;}
+/* ===== Certificates ===== */
+.certs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
 .cert{
-  border-radius:22px; overflow:hidden;
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  background:var(--panel);
   border:1px solid var(--line);
-  box-shadow:0 18px 55px rgba(0,0,0,.45);
+  border-radius:var(--radius);
+  padding:14px;
 }
-.cert a{display:block; text-decoration:none; color:inherit; position:relative;}
-.cert .thumb{
+.cert img.thumb{
   width:100%;
-  height:170px;              /* ✅ 縮圖固定高度：不會沒點就超大 */
+  height:160px;
   object-fit:cover;
-  object-position:center;
-  display:block;
-  background:rgba(0,0,0,.22);
+  cursor:pointer;
+  border-radius:12px;
 }
-.badge{
-  position:absolute; right:12px; top:12px;
-  font-size:12px; padding:6px 10px; border-radius:999px;
-  background:rgba(0,0,0,.55);
-  border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.9);
-  backdrop-filter: blur(10px);
-}
-.cert .info{padding:14px 14px 16px;}
-.cert .title{margin:0 0 6px; font-size:15px;}
-.cert .desc{margin:0; color:var(--muted); font-size:13px;}
+.cert small{display:block;margin-top:8px;color:var(--muted)}
 
-/* Lightbox */
-.lb{
-  position:fixed; inset:0;
-  background:rgba(0,0,0,.75);
-  display:none; align-items:center; justify-content:center;
-  padding:22px; z-index:200;
+/* ===== Footer ===== */
+footer{
+  margin-top:80px;
+  border-top:1px solid var(--line);
+  background:rgba(12,15,18,.9);
 }
-.lb:target{display:flex;}
-.lb .box{
-  width:min(980px, 96vw);
-  max-height:92vh;
-  background:rgba(12,15,18,.92);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 22px 80px rgba(0,0,0,.7);
-}
-.lb .top{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:12px 16px;
-  border-bottom:1px solid rgba(255,255,255,.10);
-}
-.lb .top b{font-size:14px;}
-.lb .close{
-  text-decoration:none;
-  color:rgba(255,255,255,.9);
-  border:1px solid rgba(255,255,255,.14);
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.04);
-}
-.lb img{
-  width:100%;
-  height:auto;
-  display:block;
-  max-height: calc(92vh - 52px);
-  object-fit:contain;
-  background:#0b0e11;
-}
-
-/* Footer */
-footer{margin-top:70px; border-top:1px solid var(--line); background:rgba(12,15,18,.88);}
 .footer-inner{
-  max-width:1200px; margin:auto; padding:36px 24px;
-  display:grid; grid-template-columns:1fr auto; gap:20px;
+  max-width:1200px;
+  margin:auto;
+  padding:40px 24px;
+  display:grid;
+  grid-template-columns:1fr auto;
 }
-.footer-inner p{margin:6px 0; color:var(--muted); font-size:14px;}
+.footer-inner p{margin:6px 0;color:var(--muted)}
 
-/* Floating LINE QR */
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:16px;
+}
+.lightbox.active{display:flex}
+
+/* ===== Floating LINE ===== */
 .float-line{
-  position:fixed; right:18px; bottom:18px; z-index:99;
-  width:74px; height:74px;
-  border-radius:16px; overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 14px 40px rgba(0,0,0,.55);
-  background:#fff;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:99;
 }
-.float-line img{width:100%; height:100%; object-fit:cover; display:block;}
-
-/* Responsive */
-@media (max-width: 1000px){
-  .hero-grid{grid-template-columns:1fr;}
-  .grid{grid-template-columns:repeat(2,1fr);}
-  .flow{grid-template-columns:repeat(2,1fr);}
-  .certs{grid-template-columns:1fr;}
-  .cert .thumb{height:180px;}
-}
-@media (max-width: 560px){
-  .hero-content{padding:26px;}
-  .hero h2{font-size:32px;}
-  .grid{grid-template-columns:1fr;}
-  .flow{grid-template-columns:1fr;}
-  .footer-inner{grid-template-columns:1fr;}
+.float-line img{
+  width:68px;
+  height:68px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.5);
 }
 </style>
 </head>
@@ -262,197 +240,147 @@ footer{margin-top:70px; border-top:1px solid var(--line); background:rgba(12,15,
       <a href="#certs">證照專區</a>
       <a href="#contact">聯絡我們</a>
       <a class="btn" href="tel:0917737579">來電</a>
-      <a class="btn primary" href="https://lin.ee/i12R7ca" target="_blank" rel="noopener">LINE 諮詢</a>
+      <a class="btn primary" href="https://lin.ee/i12R7ca" target="_blank">LINE 諮詢</a>
     </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-content">
-        <div class="hero-tag"><span class="dot"></span>專注「做得出來」的設計與工程</div>
-        <h2>把設計落地，讓裝修更安心</h2>
-        <p>
-          裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
-          我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="tel:0917737579">立即電話諮詢：0917-737-579</a>
-          <a class="btn" href="https://lin.ee/i12R7ca" target="_blank" rel="noopener">加入 LINE 諮詢</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="card">
-        <h3>預算透明</h3>
-        <p>先釐清需求，項目化估價，避免施工中反覆加價。</p>
-      </div>
-      <div class="card">
-        <h3>進度可控</h3>
-        <p>工序安排清楚，重要節點可驗收，讓你知道每一步做到哪。</p>
-      </div>
-      <div class="card">
-        <h3>交付有標準</h3>
-        <p>完工收尾、清潔、驗收清單，確保品質安心入住。</p>
+  <div class="hero-left">
+    <div class="hero-content">
+      <div class="hero-tag">專注「做得出來」的設計與工程</div>
+      <h2>把設計落地，讓裝修更安心</h2>
+      <p>
+        裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
+        我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="tel:0917737579">立即電話諮詢：0917-737-579</a>
+        <a class="btn" href="https://lin.ee/i12R7ca" target="_blank">加入 LINE 諮詢</a>
       </div>
     </div>
   </div>
+
+  <div class="hero-right">
+    <div class="card"><h3>預算透明</h3><p>項目化估價，避免施工中反覆加價。</p></div>
+    <div class="card"><h3>進度可控</h3><p>重要節點可驗收，隨時掌握進度。</p></div>
+    <div class="card"><h3>交付有標準</h3><p>完工清潔、驗收清單、交付安心。</p></div>
+  </div>
 </section>
 
+<!-- ===== Cases ===== -->
 <section id="cases" class="section">
-  <h3>精選作品案例</h3>
-  <div class="grid">
-    <div class="case">
-      <img src="b12fc95b-c33e-4642-9448-a319fdcb4d4d (1).png" alt="現代簡約住宅" loading="lazy">
-      <div class="info">
-        <h4>現代簡約住宅</h4>
-        <small>45 坪｜住宅裝修</small>
-      </div>
-    </div>
+<h3>精選作品案例</h3>
+<div class="grid">
 
-    <div class="case">
-      <img src="case-banqiao-03.jpg" alt="商業辦公空間" loading="lazy">
-      <div class="info">
-        <h4>商業辦公空間</h4>
-        <small>80 坪｜辦公規劃</small>
-      </div>
-    </div>
+<!-- 1 -->
+<div class="case">
+  <img src="b12fc95b-c33e-4642-9448-a319fdcb4d4d (1).png" onclick="openLightbox(this.src)">
+  <div class="info">
+    <h4>現代簡約住宅</h4>
+    <small>45 坪｜住宅裝修</small>
+  </div>
+</div>
 
-    <div class="case">
-      <img src="case-banqiao-01.jpg" alt="日式極簡住宅" loading="lazy">
-      <div class="info">
-        <h4>日式極簡住宅</h4>
-        <small>32 坪｜住宅裝修</small>
-      </div>
-    </div>
+<!-- 2 -->
+<div class="case">
+  <img src="case-banqiao-03.jpg" onclick="openLightbox(this.src)">
+  <div class="info">
+    <h4>商業辦公空間</h4>
+    <small>80 坪｜辦公規劃</small>
+  </div>
+</div>
 
-    <div class="case">
-      <img src="case-banqiao-02.jpg" alt="開放式工作空間" loading="lazy">
-      <div class="info">
-        <h4>開放式工作空間</h4>
-        <small>60 坪｜商業空間</small>
-      </div>
+<!-- 3 (兩張圖可點) -->
+<div class="case">
+  <img src="case-banqiao-01.jpg" onclick="openLightbox(this.src)">
+  <div class="info">
+    <h4>日式極簡住宅</h4>
+    <small>32 坪｜住宅裝修（點圖可切換）</small>
+    <div style="margin-top:8px">
+      <a class="btn" onclick="openLightbox('case-banqiao-04.jpg')">看第 2 張</a>
     </div>
   </div>
+</div>
+
+<!-- 4 -->
+<div class="case">
+  <img src="case-banqiao-02.jpg" onclick="openLightbox(this.src)">
+  <div class="info">
+    <h4>開放式工作空間</h4>
+    <small>60 坪｜商業空間</small>
+  </div>
+</div>
+
+</div>
 </section>
 
+<!-- ===== Flow ===== -->
 <section id="flow" class="section">
-  <h3>服務流程</h3>
-  <div class="flow">
-    <div class="step">
-      <span>01</span>
-      <h4>需求討論</h4>
-      <p>了解預算、風格與空間需求，建立完整規劃方向。</p>
-    </div>
-    <div class="step">
-      <span>02</span>
-      <h4>設計規劃</h4>
-      <p>平面配置、3D 示意與材料建議，讓成果可預期。</p>
-    </div>
-    <div class="step">
-      <span>03</span>
-      <h4>工程執行</h4>
-      <p>現場管理與品質控管，確保工序與標準一致。</p>
-    </div>
-    <div class="step">
-      <span>04</span>
-      <h4>驗收交付</h4>
-      <p>完工檢查、清潔與驗收，安心交屋。</p>
-    </div>
-  </div>
+<h3>服務流程</h3>
+<div class="flow">
+  <div class="step"><span>01</span><h4>需求討論</h4><p>預算、風格與空間規劃確認</p></div>
+  <div class="step"><span>02</span><h4>設計規劃</h4><p>平面配置、3D 示意、材料建議</p></div>
+  <div class="step"><span>03</span><h4>工程執行</h4><p>工序控管、品質驗收</p></div>
+  <div class="step"><span>04</span><h4>完工交付</h4><p>清潔、驗收、安心入住</p></div>
+</div>
 </section>
 
+<!-- ===== Certificates ===== -->
 <section id="certs" class="section">
-  <h3>證照專區（點擊可放大）</h3>
+<h3>證照專區（點擊可放大）</h3>
+<div class="certs">
 
-  <div class="certs">
-    <!-- ✅ 1、2 對調：左邊 cert2 / 中間 cert1 / 右邊 cert3 -->
-    <div class="cert">
-      <a href="#lb2">
-        <span class="badge">點擊放大</span>
-        <img class="thumb" src="images/cert2.png" alt="室內裝修業登記證" loading="lazy">
-        <div class="info">
-          <p class="title">室內裝修業登記證</p>
-          <p class="desc">政府核發合法登記</p>
-        </div>
-      </a>
-    </div>
+<!-- 已對調 1 & 2 -->
+<div class="cert">
+  <img class="thumb" src="images/cert2.png" onclick="openLightbox(this.src)">
+  <small>專業施工人員證照｜技術士合格證明</small>
+</div>
 
-    <div class="cert">
-      <a href="#lb1">
-        <span class="badge">點擊放大</span>
-        <img class="thumb" src="images/cert1.png" alt="專業施工人員證照" loading="lazy">
-        <div class="info">
-          <p class="title">專業施工人員證照</p>
-          <p class="desc">技術士合格證明</p>
-        </div>
-      </a>
-    </div>
+<div class="cert">
+  <img class="thumb" src="images/cert1.png" onclick="openLightbox(this.src)">
+  <small>室內裝修業登記證｜政府核發合法證</small>
+</div>
 
-    <div class="cert">
-      <a href="#lb3">
-        <span class="badge">點擊放大</span>
-        <img class="thumb" src="images/cert3.png" alt="安全管理合格證" loading="lazy">
-        <div class="info">
-          <p class="title">安全管理合格證</p>
-          <p class="desc">施工品質與安全管理</p>
-        </div>
-      </a>
-    </div>
-  </div>
+<div class="cert">
+  <img class="thumb" src="images/cert3.png" onclick="openLightbox(this.src)">
+  <small>安全管理合格證｜施工品質與安全管理</small>
+</div>
+
+</div>
 </section>
 
 <footer id="contact">
-  <div class="footer-inner">
-    <div>
-      <p>秀岳設計室內裝修有限公司</p>
-      <p>電話：0917-737-579</p>
-      <p>地址：新北市板橋區四川路一段264號</p>
-      <p>© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
-    </div>
-    <div>
-      <a class="btn primary" href="https://lin.ee/i12R7ca" target="_blank" rel="noopener">LINE 諮詢</a>
-    </div>
+<div class="footer-inner">
+  <div>
+    <p>秀岳設計室內裝修有限公司</p>
+    <p>電話：0917-737-579</p>
+    <p>地址：新北市板橋區四川路一段264號</p>
+    <p>© 2026 Xiuyue Interior Renovation Co., Ltd.</p>
   </div>
+  <div>
+    <a class="btn primary" href="https://lin.ee/i12R7ca" target="_blank">LINE 諮詢</a>
+  </div>
+</div>
 </footer>
 
-<!-- Floating LINE QR（公司） -->
 <div class="float-line">
-  <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr" alt="LINE 官方帳號 QR">
+  <img src="https://qr-official.line.me/gs/M_637kcctg_GW.png?oat_content=qr">
 </div>
 
-<!-- Lightbox Overlays -->
-<div id="lb2" class="lb">
-  <div class="box">
-    <div class="top">
-      <b>室內裝修業登記證</b>
-      <a class="close" href="#certs">關閉</a>
-    </div>
-    <img src="images/cert2.png" alt="室內裝修業登記證（放大）">
-  </div>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
 </div>
 
-<div id="lb1" class="lb">
-  <div class="box">
-    <div class="top">
-      <b>專業施工人員證照</b>
-      <a class="close" href="#certs">關閉</a>
-    </div>
-    <img src="images/cert1.png" alt="專業施工人員證照（放大）">
-  </div>
-</div>
-
-<div id="lb3" class="lb">
-  <div class="box">
-    <div class="top">
-      <b>安全管理合格證</b>
-      <a class="close" href="#certs">關閉</a>
-    </div>
-    <img src="images/cert3.png" alt="安全管理合格證（放大）">
-  </div>
-</div>
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").classList.add("active");
+}
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
