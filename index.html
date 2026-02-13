@@ -909,6 +909,20 @@ function buildThumbs(images){
 
 btnClose.addEventListener("click",closeViewer);
 btnBack.addEventListener("click",closeViewer);
+viewer.addEventListener("click", (e)=>{ if(e.target === viewer) closeViewer(); });
+
+window.addEventListener("keydown", (e)=>{
+  if(!viewer.classList.contains("show")) return;
+  if(e.key === "Escape") {
+    closeViewer();
+    renderCategories();
+  }
+
+  if(currentItem && currentItem.images.length > 1){
+    if(e.key === "ArrowRight") setImage((currentIndex + 1) % currentItem.images.length);
+    if(e.key === "ArrowLeft") setImage((currentIndex - 1 + currentItem.images.length) % currentItem.images.length);
+  }
+});
 
 </script>
 
