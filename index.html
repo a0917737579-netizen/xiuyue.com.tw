@@ -908,7 +908,11 @@ function buildThumbs(images){
 }
 
 btnClose.addEventListener("click",closeViewer);
-btnBack.addEventListener("click",closeViewer);
+btnBack.addEventListener("click", () => {
+  closeViewer();        // 先關相簿
+  renderCategories();   // 再回第一層：四大分類
+});
+
 viewer.addEventListener("click", (e)=>{ if(e.target === viewer) closeViewer(); });
 
 window.addEventListener("keydown", (e)=>{
