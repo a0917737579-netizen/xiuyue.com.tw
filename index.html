@@ -703,179 +703,41 @@
     </div>
   </div>
 </div>
-
 <script>
 /* ===============================
-   分類設定（首頁四大分類）
+   精選案例：三層（分類→案例列表→viewer）
+   ✅ 第二層右上角：返回分類 / 關閉（JS 自動生成）
+   ✅ Viewer 返回列表：回到原本那層（第二層/第一層）
+   ✅ 證照縮圖：用 certThumbWrap/certThumb，不裁切
 ================================ */
+
+/* ===== 分類（第一層） ===== */
 const categories = [
-  {
-    id: "small",
-    title: "小坪數精緻裝修",
-    meta: "收納整合｜動線優化",
-    info: "小坪數空間放大術，收納與動線一次到位",
-    images: ["case-banqiao-01.jpg"]
-  },
-  {
-    id: "office",
-    title: "商業辦公空間",
-    meta: "辦公規劃｜效率提升",
-    info: "打造舒適高效率工作環境",
-    images: ["case-banqiao-03.jpg"]
-  },
-  {
-    id: "store",
-    title: "商業營業空間",
-    meta: "店面裝修｜商空設計",
-    info: "兼顧形象與營運動線的空間設計",
-    images: ["case-banqiao-02.jpg"]
-  },
-  {
-    id: "luxury",
-    title: "奢豪裝修",
-    meta: "質感住宅｜高端訂製",
-    info: "材質、燈光、比例的高端整合",
-    images: ["b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png"]
-  }
+  { id:"small",  title:"小坪數精緻裝修", meta:"收納整合｜動線優化", info:"小坪數空間放大術，收納與動線一次到位", images:["case-banqiao-01.jpg"] },
+  { id:"office", title:"商業辦公空間",   meta:"辦公規劃｜效率提升", info:"打造舒適高效率工作環境", images:["case-banqiao-03.jpg"] },
+  { id:"store",  title:"商業營業空間",   meta:"店面裝修｜商空設計", info:"兼顧形象與營運動線的空間設計", images:["case-banqiao-02.jpg"] },
+  { id:"luxury", title:"奢豪裝修",       meta:"質感住宅｜高端訂製", info:"材質、燈光、比例的高端整合", images:["b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png"] }
 ];
 
-/* ===============================
-   真正案例（放在分類裡）
-================================ */
+/* ===== 案例（第二層） ===== */
 const cases = [
-  {
-    id: "c1",
-    categoryId: "luxury",
-    title: "現代簡約住宅",
-    meta: "45 坪｜住宅裝修",
-    info: "以明亮動線與收納整合為核心，搭配溫潤材質與燈光，打造耐看的生活空間。",
-    images: ["b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png"]
-  },
-  {
-    id: "c2",
-    categoryId: "office",
-    title: "商業辦公空間",
-    meta: "80 坪｜辦公規劃",
-    info: "兼顧機能與效率，動線清楚、照明均勻。",
-    images: ["case-banqiao-03.jpg"]
-  },
-  {
-    id: "c3",
-    categoryId: "small",
-    title: "日式極簡住宅",
-    meta: "32 坪｜住宅裝修",
-    info: "留白與木質結合的極簡住宅。",
-    images: ["case-banqiao-01.jpg","case-banqiao-04.jpg"]
-  },
-  {
-    id: "c4",
-    categoryId: "store",
-    title: "開放式工作空間",
-    meta: "60 坪｜商業空間",
-    info: "模組化與彈性空間配置設計。",
-    images: ["case-banqiao-02.jpg"]
-  }
+  { id:"c1", categoryId:"luxury", title:"現代簡約住宅", meta:"45 坪｜住宅裝修", info:"以明亮動線與收納整合為核心，搭配溫潤材質與燈光，打造耐看的生活空間。", images:["b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png"] },
+  { id:"c2", categoryId:"office", title:"商業辦公空間", meta:"80 坪｜辦公規劃", info:"兼顧機能與效率，動線清楚、照明均勻。", images:["case-banqiao-03.jpg"] },
+  { id:"c3", categoryId:"small",  title:"日式極簡住宅", meta:"32 坪｜住宅裝修", info:"留白與木質結合的極簡住宅。", images:["case-banqiao-01.jpg","case-banqiao-04.jpg"] },
+  { id:"c4", categoryId:"store",  title:"開放式工作空間", meta:"60 坪｜商業空間", info:"模組化與彈性空間配置設計。", images:["case-banqiao-02.jpg"] }
 ];
 
-/* ===============================
-   證照區塊（維持原樣）
-================================ */
+/* ===== 證照（維持點擊放大） ===== */
 const certs = [
-  {
-    id: "cert1",
-    title: "室內裝修業登記證",
-    meta: "政府核發合法登記",
-    info: "建築物室內裝修業登記證",
-    images: ["images/cert1.png"]
-  },
-  {
-    id: "cert2",
-    title: "專業施工人員證照",
-    meta: "技術士合格證明",
-    info: "專業施工人員證照",
-    images: ["images/cert2.png"]
-  },
-  {
-    id: "cert3",
-    title: "木工乙級證照",
-    meta: "施工品質與安全管理",
-    info: "木工乙級證照",
-    images: ["images/cert3.png"]
-  }
+  { id:"cert1", title:"室內裝修業登記證", meta:"政府核發合法登記", info:"建築物室內裝修業登記證", images:["images/cert1.png"] },
+  { id:"cert2", title:"專業施工人員證照", meta:"技術士合格證明", info:"專業施工人員證照", images:["images/cert2.png"] },
+  { id:"cert3", title:"木工乙級證照", meta:"施工品質與安全管理", info:"木工乙級證照", images:["images/cert3.png"] }
 ];
 
 const casesGrid = document.getElementById("casesGrid");
 const certsGrid = document.getElementById("certsGrid");
 
-let currentMode = "categories";
-let currentCategoryId = null;
-
-/* ===============================
-   建立卡片
-================================ */
-function makeTile(item, type){
-  const cover = item.images[0];
-  const el = document.createElement("div");
-  el.className = "tile";
-  el.setAttribute("role","button");
-  el.tabIndex = 0;
-
-  el.innerHTML = `
-    <img class="thumb" src="${cover}" alt="${item.title}">
-    <div class="tileBody">
-      <h3 class="tileTitle">${item.title}</h3>
-      <div class="tileMeta">
-        <span class="chip"><span class="miniDot"></span>${item.meta}</span>
-      </div>
-    </div>
-  `;
-
-  el.addEventListener("click", ()=>{
-    if(type==="category"){
-      openCategory(item.id);
-    }else if(type==="case"){
-      openViewer(item,"case");
-    }else{
-      openViewer(item,"cert");
-    }
-  });
-
-  return el;
-}
-
-/* ===============================
-   顯示分類
-================================ */
-function renderCategories(){
-  currentMode="categories";
-  casesGrid.innerHTML="";
-  categories.forEach(cat=>{
-    casesGrid.appendChild(makeTile(cat,"category"));
-  });
-}
-
-/* ===============================
-   顯示分類內案例
-================================ */
-function openCategory(catId){
-  currentMode="cases";
-  currentCategoryId=catId;
-  casesGrid.innerHTML="";
-  const list = cases.filter(c=>c.categoryId===catId);
-  list.forEach(c=>{
-    casesGrid.appendChild(makeTile(c,"case"));
-  });
-}
-
-/* ===============================
-   初始化
-================================ */
-renderCategories();
-certs.forEach(c => certsGrid.appendChild(makeTile(c,"cert")));
-
-/* ===============================
-   Viewer（你原本的）
-================================ */
+/* ===== Viewer（第三層） ===== */
 const viewer = document.getElementById("viewer");
 const viewerImg = document.getElementById("viewerImg");
 const viewerTitle = document.getElementById("viewerTitle");
@@ -883,73 +745,214 @@ const viewerSub = document.getElementById("viewerSub");
 const viewerInfo = document.getElementById("viewerInfo");
 const thumbRow = document.getElementById("thumbRow");
 const btnClose = document.getElementById("viewerClose");
-const btnBack = document.getElementById("viewerBack");
+const btnBack  = document.getElementById("viewerBack");
 
-let currentItem=null;
-let currentIndex=0;
+let currentItem = null;
+let currentIndex = 0;
 
-function openViewer(item,type){
-  currentItem=item;
-  currentIndex=0;
+/* ===== UI 狀態 ===== */
+let currentMode = "categories"; // categories | cases
+let currentCategoryId = null;
+let viewerFrom = { mode:"categories", categoryId:null };
 
-  viewerTitle.textContent=item.title;
-  viewerSub.textContent=item.images.length>1?"點下方縮圖切換":"單張展示";
-  viewerInfo.textContent=item.info||"";
+/* ===== 第二層右上角工具列（JS 自動插入） ===== */
+const casesSection = document.getElementById("cases");
+let casesHeadBar = null;
+
+function ensureCasesHeadBar(){
+  if(casesHeadBar) return;
+
+  // 找到 #cases 裡的 h2
+  const h2 = casesSection.querySelector(".h2");
+  if(!h2) return;
+
+  // 包一層 flex（不改原本外觀）
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;align-items:flex-start;justify-content:space-between;gap:14px;";
+
+  const left = document.createElement("div");
+  left.appendChild(h2);
+
+  // h2 後面的 .sub 也一起包進 left
+  const sub = casesSection.querySelector(".sub");
+  if(sub) left.appendChild(sub);
+
+  const right = document.createElement("div");
+  right.style.cssText = "display:none;gap:10px;align-items:center;flex-wrap:wrap;";
+  right.id = "casesNav";
+
+  const b1 = document.createElement("button");
+  b1.className = "btn";
+  b1.textContent = "返回分類";
+  b1.addEventListener("click", ()=>renderCategories(true));
+
+  const b2 = document.createElement("button");
+  b2.className = "btn";
+  b2.textContent = "關閉";
+  b2.addEventListener("click", ()=>{
+    renderCategories(true);
+    document.getElementById("top")?.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  right.appendChild(b1);
+  right.appendChild(b2);
+
+  // 把原本 h2/sub 取出後再放進 wrap
+  wrap.appendChild(left);
+  wrap.appendChild(right);
+
+  // 放到 section 最前面
+  casesSection.insertBefore(wrap, casesSection.firstChild);
+
+  casesHeadBar = right;
+}
+
+function setCasesNavVisible(yes){
+  ensureCasesHeadBar();
+  if(casesHeadBar) casesHeadBar.style.display = yes ? "flex" : "none";
+}
+
+/* ===== 建卡片 ===== */
+function makeTile(item, type){
+  const cover = item.images[0];
+  const el = document.createElement("div");
+  el.className = "tile";
+  el.setAttribute("role","button");
+  el.tabIndex = 0;
+
+  if(type === "cert"){
+    // ✅ 證照用專用縮圖（整張顯示）
+    el.innerHTML = `
+      <div class="certThumbWrap">
+        <img class="certThumb" src="${cover}" alt="${item.title}">
+      </div>
+      <div class="tileBody">
+        <h3 class="tileTitle">${item.title}</h3>
+        <div class="tileMeta">
+          <span class="chip"><span class="miniDot"></span>${item.meta}</span>
+        </div>
+      </div>
+    `;
+  } else {
+    // 分類/案例維持滿版照片
+    el.innerHTML = `
+      <img class="thumb" src="${cover}" alt="${item.title}">
+      <div class="tileBody">
+        <h3 class="tileTitle">${item.title}</h3>
+        <div class="tileMeta">
+          <span class="chip"><span class="miniDot"></span>${item.meta}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  const onOpen = ()=>{
+    if(type === "category") openCategory(item.id);
+    else if(type === "case") openViewer(item, "case");
+    else openViewer(item, "cert");
+  };
+
+  el.addEventListener("click", onOpen);
+  el.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); onOpen(); }});
+  return el;
+}
+
+/* ===== 第一層：分類 ===== */
+function renderCategories(scrollToCases=false){
+  currentMode = "categories";
+  currentCategoryId = null;
+  casesGrid.innerHTML = "";
+  categories.forEach(cat => casesGrid.appendChild(makeTile(cat, "category")));
+  setCasesNavVisible(false);
+
+  if(scrollToCases) document.getElementById("cases")?.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+/* ===== 第二層：案例列表 ===== */
+function openCategory(catId){
+  currentMode = "cases";
+  currentCategoryId = catId;
+  casesGrid.innerHTML = "";
+  cases.filter(c => c.categoryId === catId).forEach(c => casesGrid.appendChild(makeTile(c, "case")));
+  setCasesNavVisible(true);
+}
+
+/* ===== Viewer ===== */
+function openViewer(item, type){
+  viewerFrom = { mode: currentMode, categoryId: currentCategoryId };
+
+  currentItem = item;
+  currentIndex = 0;
+
+  viewerTitle.textContent = (type === "cert" ? `證照｜${item.title}` : item.title);
+  viewerSub.textContent = item.images.length > 1 ? "點下方縮圖切換（如有多張）" : "單張展示";
+  viewerInfo.textContent = item.info || "";
 
   buildThumbs(item.images);
   setImage(0);
 
   viewer.classList.add("show");
-  document.body.style.overflow="hidden";
+  viewer.setAttribute("aria-hidden","false");
+  document.body.style.overflow = "hidden";
 }
 
 function closeViewer(){
   viewer.classList.remove("show");
-  document.body.style.overflow="";
+  viewer.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
 }
 
 function setImage(i){
-  if(!currentItem)return;
-  currentIndex=i;
-  viewerImg.src=currentItem.images[i];
-  [...thumbRow.querySelectorAll(".titem")].forEach((t,idx)=>{
-    t.classList.toggle("active",idx===i);
-  });
+  if(!currentItem) return;
+  currentIndex = i;
+  viewerImg.src = currentItem.images[i];
+  [...thumbRow.querySelectorAll(".titem")].forEach((t,idx)=> t.classList.toggle("active", idx === i));
 }
 
 function buildThumbs(images){
-  thumbRow.innerHTML="";
-  images.forEach((src,idx)=>{
-    const t=document.createElement("div");
-    t.className="titem"+(idx===0?" active":"");
-    t.innerHTML=`<img src="${src}">`;
-    t.addEventListener("click",()=>setImage(idx));
+  thumbRow.innerHTML = "";
+  images.forEach((src, idx)=>{
+    const t = document.createElement("div");
+    t.className = "titem" + (idx===0 ? " active" : "");
+    t.innerHTML = `<img src="${src}" alt="縮圖 ${idx+1}">`;
+    t.addEventListener("click", ()=>setImage(idx));
     thumbRow.appendChild(t);
   });
 }
 
-btnClose.addEventListener("click",closeViewer);
-btnBack.addEventListener("click", () => {
-  closeViewer();        // 先關相簿
-  renderCategories();   // 再回第一層：四大分類
+/* Viewer 按鈕：返回列表回到原層，關閉就只關 viewer */
+btnClose.addEventListener("click", closeViewer);
+
+btnBack.addEventListener("click", ()=>{
+  closeViewer();
+  if(viewerFrom.mode === "cases" && viewerFrom.categoryId){
+    openCategory(viewerFrom.categoryId); // 回第二層
+  }else{
+    renderCategories(); // 回第一層
+  }
 });
 
 viewer.addEventListener("click", (e)=>{ if(e.target === viewer) closeViewer(); });
 
 window.addEventListener("keydown", (e)=>{
   if(!viewer.classList.contains("show")) return;
-  if(e.key === "Escape") {
-    closeViewer();
-    renderCategories();
-  }
 
+  if(e.key === "Escape"){
+    closeViewer();
+    return;
+  }
   if(currentItem && currentItem.images.length > 1){
     if(e.key === "ArrowRight") setImage((currentIndex + 1) % currentItem.images.length);
-    if(e.key === "ArrowLeft") setImage((currentIndex - 1 + currentItem.images.length) % currentItem.images.length);
+    if(e.key === "ArrowLeft")  setImage((currentIndex - 1 + currentItem.images.length) % currentItem.images.length);
   }
 });
 
+/* ===== 初始化 ===== */
+renderCategories();
+certsGrid.innerHTML = "";
+certs.forEach(c => certsGrid.appendChild(makeTile(c, "cert")));
 </script>
+
 
 </body>
 </html>
