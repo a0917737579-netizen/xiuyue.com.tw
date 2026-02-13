@@ -253,22 +253,20 @@
   }
 
   /* ✅ 證照縮圖（小張：不裁切、不撐滿） */
-  .certThumbWrap{
-    width:100%;
-    height:120px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36));
-    border-bottom:1px solid rgba(255,255,255,.08);
-  }
-  .certThumb{
-    max-width:88%;
-    max-height:86%;
-    object-fit:contain;
-    display:block;
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
-  }
+ .certThumbWrap{
+  width:100%;
+  height:150px;
+  overflow:hidden;
+  border-radius:14px;
+}
+
+.certThumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
 
   .tileBody{ padding:12px 14px 14px; }
   .tileTitle{ margin:0 0 8px; font-size:15px; letter-spacing:.4px; }
