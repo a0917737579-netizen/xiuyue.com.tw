@@ -255,16 +255,25 @@
   /* ✅ 證照縮圖（小張：不裁切、不撐滿） */
  .certThumbWrap{
   width:100%;
-  height:90px;
+  height:150px;              /* ✅首頁看到完整證照的高度（可再調） */
   overflow:hidden;
   border-radius:14px;
+  background:rgba(0,0,0,.25); /* ✅留底色更好看 */
+  display:flex;               /* ✅讓圖片置中 */
+  align-items:center;
+  justify-content:center;
+  padding:10px;               /* ✅留白避免貼邊 */
 }
 
 .certThumb{
-  width:100%;
-  height:90%;
-  object-fit:cover;
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;         /* ✅關鍵：完整顯示，不裁切 */
   display:block;
+}
+
 }
 
 
