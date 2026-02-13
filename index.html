@@ -493,6 +493,30 @@
     .heroContent{ padding:26px; }
     .menu a.link{ display:none; }
   }
+  /* =========================
+   ✅ 鎖死版：只影響「證照專區」
+   首頁小張完整顯示（不裁切），點擊後才放大
+========================= */
+#certsGrid .certThumbWrap{
+  width:100% !important;
+  height:120px !important;                 /* ⭐想更小改100px，想更大改140px */
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36)) !important;
+  border-bottom:1px solid rgba(255,255,255,.08) !important;
+}
+
+#certsGrid .certThumb{
+  max-width:88% !important;
+  max-height:86% !important;
+  width:auto !important;
+  height:auto !important;
+  object-fit:contain !important;           /* ✅完整顯示整張證照 */
+  display:block !important;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)) !important;
+}
+
 </style>
   <!-- Google Knowledge Panel / Company Schema -->
 <script type="application/ld+json">
