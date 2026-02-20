@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="秀岳設計室內裝修有限公司官方網站，提供商業及住宅、室內設計、室內裝修工程。查看精選案例、專業證照與施工流程，讓設計真正落地。">
 
-
-
 <style>
   :root{
     --bg:#0c0f12;
@@ -253,20 +251,20 @@
   }
 
   /* ✅ 證照縮圖（小張：不裁切、不撐滿） */
-.certThumbWrap{
-  width:100%;
-  height:auto !important;     /* 🔥關鍵：不要固定高度 */
-  overflow:visible !important;/* 🔥不要裁切 */
-  border-radius:14px;
-  background:rgba(0,0,0,.25);
-  padding:10px;
-}
-.certThumb{
-  width:100% !important;      /* 讓整張填滿卡片寬度 */
-  height:auto !important;     /* 依比例自動撐高 */
-  object-fit:contain !important;
-  display:block;
-}
+  .certThumbWrap{
+    width:100%;
+    height:auto !important;     /* 🔥關鍵：不要固定高度 */
+    overflow:visible !important;/* 🔥不要裁切 */
+    border-radius:14px;
+    background:rgba(0,0,0,.25);
+    padding:10px;
+  }
+  .certThumb{
+    width:100% !important;      /* 讓整張填滿卡片寬度 */
+    height:auto !important;     /* 依比例自動撐高 */
+    object-fit:contain !important;
+    display:block;
+  }
   .tileBody{ padding:12px 14px 14px; }
   .tileTitle{ margin:0 0 8px; font-size:15px; letter-spacing:.4px; }
   .tileMeta{
@@ -497,28 +495,27 @@
    ✅ 鎖死版：只影響「證照專區」
    首頁小張完整顯示（不裁切），點擊後才放大
 ========================= */
-#certsGrid .certThumbWrap{
-  width:100% !important;
-  height:120px !important;                 /* ⭐想更小改100px，想更大改140px */
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36)) !important;
-  border-bottom:1px solid rgba(255,255,255,.08) !important;
-}
+  #certsGrid .certThumbWrap{
+    width:100% !important;
+    height:120px !important;                 /* ⭐想更小改100px，想更大改140px */
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.36)) !important;
+    border-bottom:1px solid rgba(255,255,255,.08) !important;
+  }
 
-#certsGrid .certThumb{
-  max-width:88% !important;
-  max-height:86% !important;
-  width:auto !important;
-  height:auto !important;
-  object-fit:contain !important;           /* ✅完整顯示整張證照 */
-  display:block !important;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)) !important;
-}
+  #certsGrid .certThumb{
+    max-width:88% !important;
+    max-height:86% !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit:contain !important;           /* ✅完整顯示整張證照 */
+    display:block !important;
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)) !important;
+  }
 
 </style>
-  <!-- Google Knowledge Panel / Company Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -579,7 +576,7 @@
         <div class="tag"><span class="dot"></span>專注「做得出來」的設計與工程</div>
         <h1 class="heroTitle">把設計落地，讓裝修更安心</h1>
         <p class="heroDesc">
-          裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。
+          裝修不是只看效果圖，更重要的是材料、工法、現場管理與完工標準。<br>
           我們以清楚的規劃與工程管理，讓每一步都可追溯、可驗收，交付後安心使用。
         </p>
         <div class="heroActions">
@@ -703,6 +700,7 @@
     </div>
   </div>
 </div>
+
 <script>
 /* ===============================
    精選案例：三層（分類→案例列表→viewer）
@@ -716,62 +714,30 @@ const categories = [
   { id:"small",  title:"小坪數精緻裝修", meta:"收納整合｜動線優化", info:"小坪數空間放大術，收納與動線一次到位", images:["case-banqiao-01.jpg"] },
   { id:"office", title:"商業辦公空間",   meta:"辦公規劃｜效率提升", info:"打造舒適高效率工作環境", images:["case-banqiao-03.jpg"] },
   { id:"store",  title:"商業營業空間",   meta:"店面裝修｜商空設計", info:"兼顧形象與營運動線的空間設計", images:["case-banqiao-02.jpg"] },
-  { id:"luxury", title:"老屋翻新",       meta:"結構強化｜格局重整", info:"多數老屋最大問題不是舊，而是不好住。我們從水電、防水、格局與收納重新整合，讓老屋不只變新，更安全、好用、好生活。", images:["b12fc95b-c33e-4642-9448-a319fdcb4d4d%20(1).png"] }
-{,];
+  { id:"luxury", title:"老屋翻新",       meta:"結構強化｜格局重整", info:"多數老屋最大問題不是舊，而是不好住。我們從水電、防水、格局與收納重新整合，讓老屋不只變新，更安全、好用、好生活。", images:["images/新增資料夾/case001_living_after1.jpg.png"] }
+];
 
 /* ===== 案例（第二層） ===== */
-/* ===== 案例（第二層） ===== */
-/* ====== 案例（第二層） ====== */
 const cases = [
+  { id:"c1", categoryId:"luxury", title:"現代簡約住宅", meta:"45 坪｜住宅裝修", info:"以明亮動線與收納整合為核心，搭配溫潤材質與燈光，打造耐看的生活空間。", images:["case-banqiao-01.jpg"] },
+  { id:"c2", categoryId:"office", title:"商業辦公空間", meta:"80 坪｜辦公規劃", info:"兼顧機能與效率，動線清楚、照明均勻。", images:["case-banqiao-03.jpg"] },
+  { id:"c3", categoryId:"small", title:"日式極簡住宅", meta:"32 坪｜住宅裝修", info:"留白與木質結合的極簡住宅。", images:["case-banqiao-01.jpg"] },
+  { id:"c4", categoryId:"store", title:"開放式工作空間", meta:"60 坪｜商業空間", info:"模組化與彈性空間配置設計。", images:["case-banqiao-02.jpg"] },
   {
-    id: "c1",
-    categoryId: "luxury",
-    title: "現代簡約住宅",
-    meta: "45 坪｜住宅裝修",
-    info: "以明亮動線與收納整合為核心，搭配溫潤材質與燈光，打造耐看的生活空間。",
-    images: ["case-banqiao-01.jpg"]
-  },
-  {
-    id: "c2",
-    categoryId: "office",
-    title: "商業辦公空間",
-    meta: "80 坪｜辦公規劃",
-    info: "兼顧機能與效率，動線清楚、照明均勻。",
-    images: ["case-banqiao-03.jpg"]
-  },
-  {
-    id: "c3",
-    categoryId: "small",
-    title: "日式極簡住宅",
-    meta: "32 坪｜住宅裝修",
-    info: "留白與木質結合的極簡佈置。",
-    images: ["case-banqiao-01.jpg"]
-  },
-  {
-    id: "c4",
-    categoryId: "store",
-    title: "開放式工作空間",
-    meta: "60 坪｜商業空間",
-    info: "模組化與彈性空間配置設計。",
-    images: ["case-banqiao-02.jpg"]
-  },
-
-  /* === 老屋翻新（新增）=== */
-  {
-    id: "oldhouse01",
-    categoryId: "luxury",
-    title: "板橋老屋翻新",
-    meta: "老屋翻新",
-    info: "全室翻新｜客廳、廚房、衛浴、臥室整體改造。",
-    images: [
+    id:"oldhouse01",
+    categoryId:"luxury",
+    title:"板橋老屋翻新",
+    meta:"老屋翻新",
+    info:"全室翻新｜客廳、廚房、浴室、臥室整體改造",
+    images:[
       "images/新增資料夾/case001_living_after1.jpg.png",
       "images/新增資料夾/kitchen_after_01.jpg.png",
       "images/新增資料夾/case001_bath_after.jpg.png",
-      "images/新增資料夾/master_after_01.jpg.jpg",
-      "images/新增資料夾/guest_after_01.jpg.png"
+      "images/新增資料夾/master_after_01.jpg.jpg"
     ]
   }
 ];
+
 /* ===== 證照（維持點擊放大） ===== */
 const certs = [
   { id:"cert1", title:"室內裝修業登記證", meta:"政府核發合法登記", info:"建築物室內裝修業登記證", images:["images/cert1.png"] },
