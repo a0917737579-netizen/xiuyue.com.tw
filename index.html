@@ -497,7 +497,7 @@
 ========================= */
   #certsGrid .certThumbWrap{
     width:100% !important;
-    height:120px !important;                 /* ⭐想更小改100px，想更大改140px */
+    height:120px !important;
     display:flex !important;
     align-items:center !important;
     justify-content:center !important;
@@ -510,12 +510,12 @@
     max-height:86% !important;
     width:auto !important;
     height:auto !important;
-    object-fit:contain !important;           /* ✅完整顯示整張證照 */
+    object-fit:contain !important;
     display:block !important;
     filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)) !important;
   }
-
 </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -545,7 +545,6 @@
   "description": "秀岳設計室內裝修有限公司成立於2022年，位於新北市板橋區，專注於住宅裝修、商業空間設計與工程整合服務，提供從設計規劃、施工管理到完工驗收的一站式專業室內工程服務。"
 }
 </script>
-
 </head>
 
 <body>
@@ -728,13 +727,18 @@ const cases = [
     categoryId:"luxury",
     title:"板橋老屋翻新",
     meta:"老屋翻新",
-    info:"全室翻新｜客廳、廚房、浴室、臥室整體改造。點擊下方縮圖可查看裝修前後強烈對比。",
+    info:"全室翻新｜客廳、廚房、臥室、客房、浴室整體改造。點擊下方縮圖可查看裝修前後強烈對比。",
     images:[
       "images/新增資料夾/case001_living_after1.jpg.png",
       "images/新增資料夾/case001_living_before.jpg.jpg",
       "images/新增資料夾/kitchen_after_01.jpg.png",
+      "images/新增資料夾/kitchen_before_01.jpg.png",
+      "images/新增資料夾/master_after_01.jpg.png",
+      "images/新增資料夾/master_before_01.jpg.png",
+      "images/新增資料夾/guest_after_01.jpg.png",
+      "images/新增資料夾/guest_before_01.jpg.png",
       "images/新增資料夾/case001_bath_after.jpg.png",
-      "images/新增資料夾/master_after_01.jpg.jpg"
+      "images/新增資料夾/case001_bath_before.jpg.png"
     ]
   }
 ];
@@ -774,18 +778,15 @@ let casesHeadBar = null;
 function ensureCasesHeadBar(){
   if(casesHeadBar) return;
 
-  // 找到 #cases 裡的 h2
   const h2 = casesSection.querySelector(".h2");
   if(!h2) return;
 
-  // 包一層 flex（不改原本外觀）
   const wrap = document.createElement("div");
   wrap.style.cssText = "display:flex;align-items:flex-start;justify-content:space-between;gap:14px;";
 
   const left = document.createElement("div");
   left.appendChild(h2);
 
-  // h2 後面的 .sub 也一起包進 left
   const sub = casesSection.querySelector(".sub");
   if(sub) left.appendChild(sub);
 
@@ -809,11 +810,9 @@ function ensureCasesHeadBar(){
   right.appendChild(b1);
   right.appendChild(b2);
 
-  // 把原本 h2/sub 取出後再放進 wrap
   wrap.appendChild(left);
   wrap.appendChild(right);
 
-  // 放到 section 最前面
   casesSection.insertBefore(wrap, casesSection.firstChild);
 
   casesHeadBar = right;
@@ -833,7 +832,6 @@ function makeTile(item, type){
   el.tabIndex = 0;
 
   if(type === "cert"){
-    // ✅ 證照用專用縮圖（整張顯示）
     el.innerHTML = `
       <div class="certThumbWrap">
         <img class="certThumb" src="${cover}" alt="${item.title}">
@@ -846,7 +844,6 @@ function makeTile(item, type){
       </div>
     `;
   } else {
-    // 分類/案例維持滿版照片
     el.innerHTML = `
       <img class="thumb" src="${cover}" alt="${item.title}">
       <div class="tileBody">
@@ -964,7 +961,6 @@ renderCategories();
 certsGrid.innerHTML = "";
 certs.forEach(c => certsGrid.appendChild(makeTile(c, "cert")));
 </script>
-
 
 </body>
 </html>
