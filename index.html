@@ -526,7 +526,7 @@ function openCase(i){
   const total=Math.max(photos.length,1);
   const bgColors=['#c5c0b8','#b8b3ab','#cac5bc','#bfbab2'];
   document.getElementById('slides').innerHTML=photos.map((p,idx)=>
-    `<div class="slide${idx===0?' active':''}" style="background-image:url('${p}');background-size:cover;background-position:center"><span class="slide-label"></span></div>`
+    `<div class="slide${idx===0?' active':''}" style="background-image:url('${p}');background-size:contain;background-position:center;background-color:#1e1e1c;background-repeat:no-repeat"><span class="slide-label"></span></div>`
   ).join('')||(()=>{
     return `<div class="slide active" style="background-color:#c5c0b8"><span class="slide-label">照片準備中</span></div>`;
   })();
