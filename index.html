@@ -130,8 +130,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .back-btn{font-size:11px;color:var(--hint);letter-spacing:0.08em;cursor:pointer;padding:20px 40px;display:flex;align-items:center;gap:8px;border-bottom:0.5px solid var(--border);transition:color 0.2s}
 .back-btn:hover{color:var(--dark)}
 .slides-wrap{position:relative;background:var(--dark)}
-.slides{position:relative;overflow:hidden;aspect-ratio:4/3;height:auto;max-height:500px}
-.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s;background-color:#f0ede8;background-size:contain;background-position:center;background-repeat:no-repeat}
+.slides{position:relative;overflow:hidden;height:280px}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s;background-color:#f0ede8;background-size:cover;background-position:center top;background-repeat:no-repeat}
 .slide.active{opacity:1}
 .slide-label{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.1em}
 .slide-nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:40px;height:40px;background:rgba(247,245,242,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:rgba(247,245,242,0.8);transition:background 0.2s}
