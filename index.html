@@ -62,7 +62,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 
 /* HERO */
 .hero{position:relative;height:520px;overflow:hidden;background:var(--dark)}
-.hero-bg{position:absolute;inset:0;background-image:url('hero-bg.jpg.png');background-size:cover;background-position:center;opacity:0.45}
+.hero-bg{position:absolute;inset:0;background-image:url('hero-bg.jpg');background-size:cover;background-position:center;opacity:0.45}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(30,30,28,0.92) 0%,rgba(30,30,28,0.75) 45%,rgba(30,30,28,0.15) 100%)}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 40px;max-width:580px}
 .hero-tag{font-size:10px;letter-spacing:0.22em;color:var(--gold);margin-bottom:20px}
@@ -327,7 +327,7 @@ footer{padding:20px 40px;font-size:11px;color:#b4b2a9;letter-spacing:0.1em;backg
   <div class="detail" id="detail-view">
     <div class="back-btn" onclick="backToList()">← 返回所有案例</div>
     <div class="slides-wrap">
-      <div class="slides" id="slides" style="position:relative;overflow:hidden;height:240px;border:1.5px solid #b4b2a9;background:#f7f5f2;padding:8px">
+      <div class="slides" id="slides">
         <div class="slide active" style="background-color:#c5c0b8"><span class="slide-label">照片載入中</span></div>
         <div class="slide" style="background-color:#b8b3ab"><span class="slide-label">照片載入中</span></div>
         <div class="slide" style="background-color:#cac5bc"><span class="slide-label">照片載入中</span></div>
@@ -451,13 +451,15 @@ const allCases=[
     badge:'老屋翻新',
     title:'板橋 老屋翻新案例',
     sub:'全室翻新｜現代簡約',
-    loc:'板橋',size:'待補',style:'現代簡約',budget:'面議',
-    photos:['images/case001_living_after1.jpg.png','images/case001_living_before.jpg.jpg','images/case001_bath_after.jpg.png','images/case001_bath_before.jpg.png','images/guest_after_01.jpg.png','images/guest_before_01.jpg.jpg','images/kitchen_after_01.jpg.png','images/kitchen_before_01.jpg.jpg','images/master_after_01.jpg.jpg','images/master_before_01.jpg.jpg'],
+    loc:'板橋',
+    size:'待補',
+    style:'現代簡約',
+    budget:'面議',
+    photos:['images/case001_living_after1.jpg','images/case001_living_before.jpg','images/case001_bath_after.jpg','images/case001_bath_before.jpg','images/guest_after_01.jpg','images/guest_before_01.jpg','images/kitchen_after_01.jpg','images/kitchen_before_01.jpg','images/master_after_01.jpg','images/master_before_01.jpg'],
     desc:'老屋全室翻新，包含客廳、臥室、廚房、衛浴全面改造。保留原有格局的同時，以現代簡約風格重新詮釋每個空間，讓老屋煥然一新。',
     materials:['超耐磨木地板','白色噴漆','系統櫃','衛浴設備更新','廚具翻新'],
     vibe:'明亮、清爽、現代感。讓老屋重獲新生，充滿舒適的居家生活氣息。'
-  },
-  // 請在此新增更多案例，格式如上
+  }
 ];
 
 const PER_PAGE=6;
@@ -522,9 +524,9 @@ function openCase(i){
   const total=Math.max(photos.length,1);
   const bgColors=['#c5c0b8','#b8b3ab','#cac5bc','#bfbab2'];
   document.getElementById('slides').innerHTML=photos.map((p,idx)=>
-    `<div class="slide${idx===0?' active':''}" style="background-image:url('${p}');background-size:contain;background-position:center;background-color:#f7f5f2"><span class="slide-label"></span></div>`
+    `<div class="slide${idx===0?' active':''}" style="background-image:url('${p}');background-size:cover;background-position:center"><span class="slide-label"></span></div>`
   ).join('')||(()=>{
-    return `<div class="slide active" style="background-color:#f7f5f2"><span class="slide-label">照片準備中</span></div>`;
+    return `<div class="slide active" style="background-color:#c5c0b8"><span class="slide-label">照片準備中</span></div>`;
   })();
   document.getElementById('thumbs').innerHTML=photos.map((p,idx)=>
     `<div class="thumb${idx===0?' active':''}" onclick="goSlide(${idx})" style="background-image:url('${p}');background-size:cover;background-position:center"><span></span></div>`
