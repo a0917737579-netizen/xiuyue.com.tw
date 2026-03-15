@@ -327,7 +327,7 @@ footer{padding:20px 40px;font-size:11px;color:#b4b2a9;letter-spacing:0.1em;backg
   <div class="detail" id="detail-view">
     <div class="back-btn" onclick="backToList()">← 返回所有案例</div>
     <div class="slides-wrap">
-      <div class="slides" id="slides" style="position:relative;overflow:hidden;height:320px;border:1.5px solid #b4b2a9;padding:8px;background:#f7f5f2">
+      <div class="slides" id="slides" style="position:relative;overflow:hidden;height:240px;border:1.5px solid #b4b2a9;background:#f7f5f2;padding:8px">
         <div class="slide active" style="background-color:#c5c0b8"><span class="slide-label">照片載入中</span></div>
         <div class="slide" style="background-color:#b8b3ab"><span class="slide-label">照片載入中</span></div>
         <div class="slide" style="background-color:#cac5bc"><span class="slide-label">照片載入中</span></div>
@@ -522,9 +522,9 @@ function openCase(i){
   const total=Math.max(photos.length,1);
   const bgColors=['#c5c0b8','#b8b3ab','#cac5bc','#bfbab2'];
   document.getElementById('slides').innerHTML=photos.map((p,idx)=>
-    `<div class="slide${idx===0?' active':''}" style="background-image:url('${p}');background-size:cover;background-position:center"><span class="slide-label"></span></div>`
+    `<div class="slide${idx===0?' active':''}" style="background-image:url('${p}');background-size:contain;background-position:center;background-color:#f7f5f2"><span class="slide-label"></span></div>`
   ).join('')||(()=>{
-    return `<div class="slide active" style="background-color:#c5c0b8"><span class="slide-label">照片準備中</span></div>`;
+    return `<div class="slide active" style="background-color:#f7f5f2"><span class="slide-label">照片準備中</span></div>`;
   })();
   document.getElementById('thumbs').innerHTML=photos.map((p,idx)=>
     `<div class="thumb${idx===0?' active':''}" onclick="goSlide(${idx})" style="background-image:url('${p}');background-size:cover;background-position:center"><span></span></div>`
